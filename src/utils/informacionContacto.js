@@ -1,15 +1,13 @@
-export const aboutMe = `Experiencia como almacenista con enfoque en control y 
-registro de mercancía, manejo de datos en Excel y documentación técnica. 
-Habilidades en organización, precisión y procesamiento de información. con experiencia 
-en programación orientada a objetos y desarrollo web (HTML, CSS, Python y C). 
-He trabajado con bases de datos SQL, automatización con Excel y documentación 
-técnica en LaTeX.`
+export const aboutMe = `Apasionado por el desarrollo web, con proyectos 
+en HTML, CSS, JavaScript, React, Tailwind y Node.js. Experiencia en bases 
+de datos SQL/SQLite3 y constante aprendizaje de nuevas herramientas para 
+crear soluciones completas.`
 
-export const listaInfo = ['nombre', 'telefono', 'correo', 'direccion', 'github', 'linkedin','cv'];
+export const listaInfo = ['nombre', 'telefono', 'correo', 'direccion', 'github', 'linkedin', 'cv'];
 
 export const informacion = {
     nombre: {
-        valor:'Salvador Gutiérrez Olvera',
+        valor: 'Salvador Gutiérrez Olvera',
         icono: 'fa-solid fa-user',
         color: '#983CDE',
         enlace: false
@@ -57,36 +55,36 @@ export const informacion = {
     }
 }
 
-export const listaEstudios = ['universidad', 'bachillerato'];
+export const listaEstudios = ['bachillerato', 'universidad'];
 
 export const estudios = {
     universidad: {
         nombre: 'Facultad de Ingenieria, UNAM',
         carrera: 'Ingenieria en Computación (Incompleta)',
         generacion: 'Agosto 2015 -- Mayo 2019',
-        ubicacion:  'Coyoacán, CDMX'
+        ubicacion: 'Coyoacán, CDMX'
     },
     bachillerato: {
         nombre: ' CCH Vallejo, UNAM',
         carrera: 'Bachillerato',
         generacion: 'Agosto 2012 -- Junio 2015',
-        ubicacion:  ' Gustavo A. Madero, CDMX'
+        ubicacion: ' Gustavo A. Madero, CDMX'
     }
 }
 
-export const listaTrabajos = ['prova', 'selectshop'];
+export const listaTrabajos = ['selectshop', 'prova'];
 
 export const trabajos = {
     prova: {
         nombre: 'Procesos de Valor Agregado (PROVA)',
         puesto: 'Almacenista/Embarques',
         estancia: 'Marzo 2025 -- Septiembre 2025',
-        ubicacion:  'Tepotzotlán, Méx.'
+        ubicacion: 'Tepotzotlán, Méx.'
     },
     selectshop: {
         nombre: 'Comercializadora de Marcas JSB',
         puesto: 'Ayudante General',
         estancia: 'Junio 2024 -- Enero 2025',
-        ubicacion:  'Tepotzotlán, Méx.'
+        ubicacion: 'Tepotzotlán, Méx.'
     }
 }

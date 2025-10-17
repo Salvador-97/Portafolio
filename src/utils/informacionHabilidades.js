@@ -3,6 +3,7 @@ export const listaBack = ['python', 'sql', 'node']
 
 const htmlJSON = {
     icono: 'fa-brands fa-html5',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
     colorIcono: '#FF851B',
     conocimiento: {
         item1: 'Estructura de páginas web semánticas',
@@ -14,6 +15,7 @@ const htmlJSON = {
 
 const cssJSON = {
     icono: 'fa-brands fa-css',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
     colorIcono: '#0059A6',
     conocimiento: {
         item1: 'Estilizado de páginas web',
@@ -24,6 +26,7 @@ const cssJSON = {
 
 const javascriptJSON = {
     icono: 'fab fa-js',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
     colorIcono: '#F7CD34',
     conocimiento: {
         item1: 'Manipulación del DOM',
@@ -34,6 +37,7 @@ const javascriptJSON = {
 
 const pythonJSON = {
     icono: 'fa-brands fa-python',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
     colorIcono: '#0074D9',
     conocimiento: {
         item1: 'Automatización de procesos',
@@ -45,6 +49,7 @@ const pythonJSON = {
 
 const sqlJSON = {
     icono: 'fa-solid fa-database',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg',
     colorIcono: '#AAB6BD',
     conocimiento: {
         item1: 'Consultas SELECT, INSERT, UPDATE, DELETE',
@@ -55,6 +60,7 @@ const sqlJSON = {
 
 const reactJSON = {
     icono: 'fa-brands fa-react',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
     colorIcono: '#1EC7C7',
     conocimiento: {
         item1: 'Desarrollo de interfaces modulares.',
@@ -66,6 +72,7 @@ const reactJSON = {
 
 const nodeJSON = {
     icono: 'fa-brands fa-node-js',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain-wordmark.svg',
     colorIcono: '#1C993F',
     conocimiento: {
         item1: 'Creación de servidores REST y APIs básicas.',

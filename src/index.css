@@ -11,10 +11,13 @@
 @theme {
   --color-morado: #DD8FFA;
   --color-blanco: #F3F4F6;
+  --color-gris: #D6D6D6;
   --color-verde: #17854A;
   --color-azuloscuro: #178582;
   --color-rojooscuro: #851752;
   --color-azulfondo: #222945;
+  --color-negrofondo: #1A1A1D;
+  --color-azultarjeta: #1B3B7D;
 }
 
 :root { 
