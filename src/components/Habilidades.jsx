@@ -27,23 +27,21 @@ export function Habilidad({ lenguaje }) {
 
 export function Skills({ skill }) {
     return (
-        <div className="flex w-full">
-            <div className="w-[80%] flex justify-around bg-[#1A1A1D] p-[1rem] mb-[0.8rem] rounded-[1rem] shadow-[0_0_25px_5px_#0074D950]">
-                <div className="p-[0.5rem]">
-                    <i className={`
-                        ${skill.icono} text-[5rem] text-[#fff] mb-[0.5rem]`}
-                        style={{ color: skill.color }}></i>
-                    <p className="text-[#fff] font-[700]">{skill.nombre}</p>
-                </div>
+        <div className="bg-[#1A1A1D] rounded-[0.5rem] flex flex-col">
+            <div className="bg-azulfondo rounded-t-[0.5rem]">
+                <i className={`
+                        ${skill.icono} text-[2rem] my-[0.5rem]`}
+                    style={{ color: skill.color }}></i>
             </div>
+            <div className="text-blanco items-center w-[80%] m-auto py-[0.5rem] text-[0.6rem] font-[700]">{skill.nombre}</div>
         </div>
     );
 }
 
-export function TipoLenguage({ titulo, lista }) {
+export function Subseccion({ titulo, lista, lenguaje }) {
     const [navAbierto, abrirNav] = useState(false);
     return (
-        <>                
+        <>
             <button type="button" onClick={() => abrirNav(!navAbierto)}>
                 <h2 className="text-[#4F6CF4] font-[700] text-[1.2rem] my-[1rem]">
                     {titulo}
@@ -51,11 +49,14 @@ export function TipoLenguage({ titulo, lista }) {
                 </h2>
             </button>
             <div className={
-                clsx(`grid grid-cols-1 gap-[1rem] justify-between absolute top-full origin-top
-                    ${navAbierto ? 'opacity-100 relative' : 'opacity-0'}`
+                clsx(`grid gap-[1rem] justify-between absolute top-full origin-top`,
+                    navAbierto ? 'opacity-100 relative' : 'opacity-0',
+                    lenguaje ? 'grid-cols-1' : 'grid-cols-3'
                 )}>
-                {lista.map((lenguaje, index) => (
-                    <Habilidad key={index} lenguaje={lenguajes[lenguaje]} />
+                {lista.map(item => (
+                    lenguaje
+                        ? <Habilidad key={item} lenguaje={lenguajes[item]} />
+                        : <Skills key={item} skill={skills[item]} />
                 ))}
             </div>
         </>
@@ -66,16 +67,9 @@ export default function Habilidades() {
     return (
         <>
             <div className="flex flex-col text-center relative overflow-hidden">
-                <TipoLenguage titulo="Front-End" lista={listaFront} />
-                <TipoLenguage titulo="Back-End" lista={listaBack} />
-            </div>
-            <div className="flex flex-col text-center">
-                <h2 className="text-[#4F6CF4] font-[700] text-[1.2rem] mb-[1rem]">Soft Skills</h2>
-                <div className="grid grid-cols-2 justify-between place-items-center">
-                    {listaSkills.map((skill, index) => (
-                        <Skills key={index} skill={skills[skill]} />
-                    ))}
-                </div>
+                <Subseccion titulo="Front-End" lista={listaFront} lenguaje={true} />
+                <Subseccion titulo="Back-End" lista={listaBack} lenguaje={true} />
+                <Subseccion titulo="Soft Skills" lista={listaSkills} lenguaje={false} />
             </div>
         </>
     );

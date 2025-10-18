@@ -16,7 +16,7 @@ export function InformacionSlides({ titulo, lista, colorFondo }) {
     return (
         <div className='text-blanco font-[700] text-center h-[90%] mt-[0.5rem]'>
             <div className='text-[1.3rem]'>{titulo}</div>
-            <div className='relative h-[80%] w-[90%] mx-auto'>
+            <div className='relative h-[75%] w-[90%] mx-auto'>
                 {lista.map((valor) => (
                 <div key={valor} onClick={() => setTarjeta(valor === cambioTarjeta ? null : valor)}
                 className={

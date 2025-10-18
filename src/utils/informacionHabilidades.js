@@ -96,7 +96,7 @@ export const listaSkills = ['disciplina', 'resultados', 'organizacion', 'aprendi
 const disciplinaJSON = {
     nombre: 'Disciplina',
     icono: 'fa-solid fa-bullseye',
-    color: '#fff'
+    color: '#BD3953'
 }
 
 const resultadosJSON = {
@@ -108,7 +108,7 @@ const resultadosJSON = {
 const organizacionJSON = {
     nombre: 'Organización',
     icono: 'fa-solid fa-chart-pie',
-    color: '#302C82'
+    color: '#D4B726'
 }
 const aprendizajeJSON = {
     nombre: 'Aprendizaje autónomo',
