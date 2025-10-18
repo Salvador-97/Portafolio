@@ -1,4 +1,5 @@
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 import {
     estado, lenguajes, proyectoContenedores, proyectoMarbetes, proyectoSeries, proyectoPortafolio, lenguajesContenedores, lenguajesMarbetes, lenguajesSeries, lenguajesPortafolio, iconos
@@ -9,17 +10,18 @@ export function Tarjeta({ informacion, iconos, lenguajesProyecto }) {
 
     return (
         <>
-            <a href={informacion.link} target="no_blank" className='relative rounded-[1.5rem] mx-auto w-[95%] pb-[1rem] bg-[#1A1A1D] shadow-[0_0_25px_5px_#8A5CF650] transform transition-transform hover:-translate-y-[1.5rem] duration-900 ease-out group overflow-hidden h-[22rem] hover:shadow-[0_0_25px_8px_#8A5CF680]'>
+            <a href={informacion.link} target="no_blank" className='relative rounded-[1.5rem] mx-auto w-[95%] pb-[1rem]'>
                 <div className='text-center rounded-t-[1.5rem] w-full ' style={{ background: iconos.colorFondo }}>
                     <i className={`${iconos.icono} fa-6x py-[0.8rem]`} style={{ color: iconos.colorIcono }}></i>
                 </div>
-                <div className="text-[#fff] sm:text-[#000] text-[0.9rem] m-[1rem] flex flex-col items-center justify-center text-center transform transition-all duration-700 ease-out group-hover:translate-y-[5rem] group-hover:opacity-0 z-10">
+                <div className="text-[#fff] text-[0.9rem] m-[1rem] flex flex-col items-center justify-center text-center transform transition-all duration-700 ease-out group-hover:translate-y-[5rem] group-hover:opacity-0 z-10">
                     <div className="font-[700] h-[3.5rem] pb-[1rem]">{informacion.nombre}</div>
                     <div className="font-[700]">Tecnologias</div>
                     <div className="py-[0.5rem]">
                         {lenguajesProyecto.map((lenguaje, index) => (
-                            <i key={index} className={`${lenguajes[lenguaje].icono} pr-[0.5rem] text-[1.2rem]`}
-                                style={{ color: lenguajes[lenguaje].colorIcono }}></i>
+                             <i key={index} className={`${lenguajes[lenguaje].icono} pr-[0.5rem] text-[1.2rem]`}
+                                 style={{ color: lenguajes[lenguaje].colorIcono }}></i>
+                            // <img src={lenguajes[lenguaje].img} className="w-[10%] mx-auto" />
                         ))}
                     </div>
                     <div className="pb-[1rem]">
@@ -55,13 +57,47 @@ export function Tarjeta({ informacion, iconos, lenguajesProyecto }) {
     );
 }
 
+export function SlidesProyectos() {
+    return (
+        <Swiper
+            modules={[Pagination, Autoplay, Navigation]}
+            navigation={true}
+            pagination={{ clickable: true }}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={true}
+            speed={800}
+            breakpoints={{
+                480: { slidesPerView: 2 },
+                640: { slidesPerView: 2 },   // móviles
+                768: { slidesPerView: 3 },   // tablets
+                1024: { slidesPerView: 4 },  // pantallas medianas
+                1280: { slidesPerView: 4 }   // pantallas grandes
+            }}
+            className='rounded-b-[1rem] m-auto h-[22rem]'
+        >
+            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
+                <Tarjeta informacion={proyectoPortafolio} iconos={iconos.portafolio} lenguajesProyecto={lenguajesPortafolio} />
+            </SwiperSlide>
+            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
+                <Tarjeta informacion={proyectoContenedores} iconos={iconos.contenedores} lenguajesProyecto={lenguajesContenedores} />
+            </SwiperSlide>
+            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
+                <Tarjeta informacion={proyectoMarbetes} iconos={iconos.marbetes} lenguajesProyecto={lenguajesMarbetes} />
+            </SwiperSlide>
+            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
+                <Tarjeta informacion={proyectoSeries} iconos={iconos.series} lenguajesProyecto={lenguajesSeries} />
+            </SwiperSlide>
+        </Swiper>
+
+
+    );
+}
+
 export default function Proyectos() {
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border border-[#fff] justify-center'>
-            <Tarjeta informacion={proyectoPortafolio} iconos={iconos.portafolio} lenguajesProyecto={lenguajesPortafolio} />
-            <Tarjeta informacion={proyectoContenedores} iconos={iconos.contenedores} lenguajesProyecto={lenguajesContenedores} />
-            <Tarjeta informacion={proyectoMarbetes} iconos={iconos.marbetes} lenguajesProyecto={lenguajesMarbetes} />
-            <Tarjeta informacion={proyectoSeries} iconos={iconos.series} lenguajesProyecto={lenguajesSeries} />
-        </div>
+        <>
+            <SlidesProyectos />
+        </>
     );
 }

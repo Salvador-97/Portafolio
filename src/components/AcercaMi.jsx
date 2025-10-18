@@ -8,7 +8,6 @@ import '../index.css'
 import { aboutMe, informacion, listaInfo } from '../utils/informacionContacto';
 import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
 import { copiar } from '../utils/copiarContenido';
-import { act } from 'react';
 import clsx from 'clsx';
 
 export function InformacionSlides({ titulo, lista, colorFondo }) {
@@ -49,7 +48,7 @@ export function Carousel() {
             slidesPerView={1}
             loop={true}
             speed={800}
-            className='rounded-b-[1rem] h-[15rem] m-auto'
+            className='h-[15rem] m-auto rounded-b-[1rem] sm:rounded-bl-none sm:rounded-r-[1rem] md:w-[70%]'
         >
             <SwiperSlide className='bg-[#17854A] h-full'>
                 <div className='m-auto flex items-center w-[80%] h-[85%] text-blanco text-center font-[500] text-[0.9rem]'>
@@ -104,8 +103,11 @@ export function Contacto() {
 
 export default function AcercaMi() {
     return (
-        <div className="">
-            <div className="p-[0.5rem] rounded-t-[1rem] bg-negrofondo">
+        <div className="mx-auto sm:flex lg:w-[70%]">
+            <div className={
+                clsx("bg-negrofondo flex items-center p-[0.5rem] rounded-t-[1rem]",
+                    "sm:rounded-tr-none sm:rounded-l-[1rem] md:w-[50%]"
+                )}>
                 <Contacto />
             </div>
             <Carousel />

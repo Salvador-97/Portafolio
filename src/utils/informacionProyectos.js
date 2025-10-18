@@ -26,42 +26,52 @@ export const lenguajes = {
     html: {
         icono: 'fa-brands fa-html5',
         colorIcono: '#FF851B',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg'
     },
     css: {
         icono: 'fa-brands fa-css3',
-        colorIcono: '#0059A6'
+        colorIcono: '#0059A6',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg'
     },
     bootstrap: {
         icono: 'fa-brands fa-bootstrap',
-        colorIcono: '#6B2099'
+        colorIcono: '#6B2099',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg'
     },
     javascript: {
         icono: 'fab fa-js',
-        colorIcono: '#F7CD34'
+        colorIcono: '#F7CD34',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'
     },
     python: {
         icono: 'fa-brands fa-python',
-        colorIcono: '#0059A6'
+        colorIcono: '#0059A6',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'
     },
     cvs: {
         icono: 'fa-brands fa-css3',
-        colorIcono: '#0074D9'
+        colorIcono: '#0074D9',
+        img: ''
     },
     excel: {
         icono: 'fa-solid fa-file-excel',
-        colorIcono: '#188531'
+        colorIcono: '#188531',
+        img: ''
     },
     sql: {
         icono: 'fa-solid fa-database',
-        colorIcono: '#9FA6A2'
+        colorIcono: '#9FA6A2',
+        img: ''
     },
     node: {
         icono: 'fa-brands fa-node-js',
-        colorIcono: '#0D5928'
+        colorIcono: '#0D5928',
+        img: ''
     },
     react: {
         icono: 'fa-brands fa-react',
-        colorIcono: '#26B6E0'
+        colorIcono: '#26B6E0',
+        img: ''
     }
 }
 
