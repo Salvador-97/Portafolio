@@ -51,6 +51,7 @@ export const informacion = {
         valor: 'CV completo',
         icono: 'fa-solid fa-circle-down',
         color: '#2ECF29',
+        link: 'https://drive.google.com/file/d/1psmJqivPcdudaGyOUXT4d8vzM_f25rN6/view?usp=sharing',
         enlace: true
     }
 }

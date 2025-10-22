@@ -8,6 +8,9 @@ function App() {
     <main>
         <Secciones/>
     </main>
+    <footer className="text-blanco text-center font-[600]">
+        <i className="fa-solid fa-copyright pr-[0.5rem]"></i>Salvador Gutiérrez Olvera
+    </footer>
     </>
   );
 }

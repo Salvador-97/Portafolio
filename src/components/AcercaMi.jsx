@@ -51,7 +51,7 @@ export function Carousel() {
             className='h-[15rem] m-auto rounded-b-[1rem] sm:rounded-bl-none sm:rounded-r-[1rem] md:w-[70%]'
         >
             <SwiperSlide className='bg-[#17854A] h-full'>
-                <div className='m-auto flex items-center w-[80%] h-[85%] text-blanco text-center font-[500] text-[0.9rem]'>
+                <div className='m-auto flex items-center w-[80%] h-[85%] text-blanco text-center font-[700] text-[0.9rem]'>
                     {aboutMe}
                 </div>
             </SwiperSlide>

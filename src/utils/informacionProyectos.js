@@ -25,27 +25,27 @@ export const iconos = {
 export const lenguajes = {
     html: {
         icono: 'fa-brands fa-html5',
-        colorIcono: '#FF851B',
+        colorIcono: '#E34F26',
         img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg'
     },
     css: {
         icono: 'fa-brands fa-css3',
-        colorIcono: '#0059A6',
+        colorIcono: '#1572B6',
         img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg'
     },
     bootstrap: {
         icono: 'fa-brands fa-bootstrap',
-        colorIcono: '#6B2099',
+        colorIcono: '#7952B3',
         img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg'
     },
     javascript: {
         icono: 'fab fa-js',
-        colorIcono: '#F7CD34',
+        colorIcono: '#F7DF1E',
         img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'
     },
     python: {
         icono: 'fa-brands fa-python',
-        colorIcono: '#0059A6',
+        colorIcono: '#3776AB',
         img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'
     },
     cvs: {
@@ -55,7 +55,7 @@ export const lenguajes = {
     },
     excel: {
         icono: 'fa-solid fa-file-excel',
-        colorIcono: '#188531',
+        colorIcono: '#217346',
         img: ''
     },
     sql: {
@@ -65,12 +65,12 @@ export const lenguajes = {
     },
     node: {
         icono: 'fa-brands fa-node-js',
-        colorIcono: '#0D5928',
+        colorIcono: '#339933',
         img: ''
     },
     react: {
         icono: 'fa-brands fa-react',
-        colorIcono: '#26B6E0',
+        colorIcono: '#61DAFB',
         img: ''
     }
 }
@@ -105,7 +105,7 @@ export const proyectoSeries = {
 export const proyectoPortafolio = {
     nombre: 'Portafolio Web',
     descripcion: 'Sitio web diseñado para presentar mis proyectos, habilidades y experiencia laboral.',
-    link: 'https://salvador-97.github.io/',
+    link: 'https://salvador-97.github.io/Portafolio/',
     desarrollo: true,
     estado: true,
     progreso: 1

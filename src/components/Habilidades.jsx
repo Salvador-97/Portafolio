@@ -4,7 +4,11 @@ import clsx from "clsx";
 
 export function Habilidad({ lenguaje }) {
     return (
-        <div className="w-[100%] flex flex-col bg-[#1A1A1D] rounded-[0.7rem]">
+        <div className={
+            clsx(
+                "w-[100%] flex flex-col bg-[#1A1A1D] rounded-[0.7rem] border-3 border-transparent",
+                "hover:border-blanco transition-colors duration-500 ease-in"
+            )}>
             <div className="p-[1rem]">
                 {/* <i
                     className={`${lenguaje.icono} text-[5rem]`}
@@ -14,8 +18,14 @@ export function Habilidad({ lenguaje }) {
                 <img src={lenguaje.img} className="w-[35%] mx-auto" />
 
             </div>
-            <div className="flex items-center py-[0.5rem] justify-center h-full bg-azultarjeta rounded-b-[0.7rem]">
-                <ul className="text-[#fff] text-left text-[0.75rem] w-[90%]">
+            <div className={
+                clsx(
+                    "flex items-center py-[0.5rem] justify-center h-full bg-azultarjeta rounded-b-[0.7rem]",
+                )}>
+                <ul className={
+                    clsx("text-blanco text-left text-[0.75rem] w-[90%]",
+                        "font-[700]"
+                    )}>
                     {Object.values(lenguaje.conocimiento).map((item, index) => (
                         <li key={index}><i className="fa-solid fa-caret-right mr-[0.5rem] text-[#5FF0B9]"></i>{item}</li>
                     ))}
@@ -39,19 +49,30 @@ export function Skills({ skill }) {
 }
 
 export function Subseccion({ titulo, lista, lenguaje }) {
-    const [navAbierto, abrirNav] = useState(false);
+    let navAbiertoMobile;
+    if (window.innerWidth < 1024) {
+        navAbiertoMobile = false;
+    } else {
+        navAbiertoMobile = true;
+    }
+    const [navAbierto, abrirNav] = useState(navAbiertoMobile);
     return (
         <>
-            <button type="button" onClick={() => abrirNav(!navAbierto)}>
+            <button className="cursor-pointer" type="button" onClick={() => abrirNav(!navAbierto)}>
                 <h2 className="text-[#687FE3] font-[700] text-[1.2rem] my-[1rem]">
                     {titulo}
                     <i className="fa-solid fa-caret-down pl-[0.5rem]"></i>
                 </h2>
             </button>
             <div className={
-                clsx(`grid gap-[1rem] justify-between absolute top-full origin-top`,
-                    navAbierto ? 'opacity-100 relative' : 'opacity-0',
-                    lenguaje ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'grid-cols-3 md:grid-cols-5'
+                clsx(`grid gap-[1.2rem] overflow-hidden justify-between top-full origin-top`,
+                    `transition-all duration-500 ease-in-out transform`,
+                    navAbierto
+                        ? 'opacity-100 scale-100 max-h-[2000px]'
+                        : 'opacity-0 scale-90 max-h-0',
+                    lenguaje
+                        ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+                        : 'grid-cols-3 md:grid-cols-5'
                 )}>
                 {lista.map(item => (
                     lenguaje

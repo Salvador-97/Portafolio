@@ -21,7 +21,8 @@
 }
 
 :root { 
-  --swiper-theme-color: #fff !important
+  --swiper-theme-color: #fff !important;
+  --swiper-pagination-bullet-inactive-color: #cccccc;
 }
 body {
   background: linear-gradient(to bottom, #222945 0%, #161A29 50%, #0E101C 100%);
