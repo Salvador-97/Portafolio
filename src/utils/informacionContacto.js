@@ -77,7 +77,7 @@ export const listaTrabajos = ['selectshop', 'prova'];
 
 export const trabajos = {
     prova: {
-        nombre: 'Procesos de Valor Agregado (PROVA)',
+        nombre: 'Procesos de Valor Agregado',
         puesto: 'Almacenista/Embarques',
         estancia: 'Marzo 2025 -- Septiembre 2025',
         ubicacion: 'Tepotzotlán, Méx.'

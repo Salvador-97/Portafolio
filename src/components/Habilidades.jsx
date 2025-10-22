@@ -7,7 +7,7 @@ export function Habilidad({ lenguaje }) {
         <div className={
             clsx(
                 "w-[100%] flex flex-col bg-[#1A1A1D] rounded-[0.7rem] border-3 border-transparent",
-                "hover:border-blanco transition-colors duration-500 ease-in"
+                "hover:border-blanco hover:bg-negrohover transition-colors duration-500 ease-in"
             )}>
             <div className="p-[1rem]">
                 {/* <i
@@ -40,10 +40,10 @@ export function Skills({ skill }) {
         <div className="bg-[#1A1A1D] rounded-[0.5rem] flex flex-col">
             <div className="bg-azulfondo rounded-t-[0.5rem]">
                 <i className={`
-                        ${skill.icono} text-[2rem] my-[0.5rem]`}
+                        ${skill.icono} text-[4rem] my-[0.5rem]`}
                     style={{ color: skill.color }}></i>
             </div>
-            <div className="text-blanco items-center w-[80%] m-auto py-[0.5rem] text-[0.6rem] font-[700]">{skill.nombre}</div>
+            <div className="text-blanco items-center w-[80%] m-auto py-[0.5rem] text-[0.8rem] font-[700]">{skill.nombre}</div>
         </div>
     );
 }
@@ -72,7 +72,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                         : 'opacity-0 scale-90 max-h-0',
                     lenguaje
                         ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-                        : 'grid-cols-3 md:grid-cols-5'
+                        : 'grid-cols-3 md:grid-cols-5 w-[60%] mx-auto'
                 )}>
                 {lista.map(item => (
                     lenguaje

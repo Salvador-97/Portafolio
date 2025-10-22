@@ -17,8 +17,13 @@
   --color-rojooscuro: #851752;
   --color-azulfondo: #222945;
   --color-negrofondo: #1A1A1D;
+  --color-negrohover: #29292B;
   --color-azultarjeta: #1B3B7D;
   --color-moradotarjeta: #6D44E0;
+  --color-azulestudiostitulo: #0F5E5C;
+  --color-azulestudiosfondo: #178582;
+  --color-rojotrabajostitulo: #5E0F3A;
+  --color-rojotrabajosfondo: #851752;
 }
 
 :root { 
@@ -27,4 +32,10 @@
 }
 body {
   background: linear-gradient(to bottom, #222945 0%, #161A29 50%, #0E101C 100%);
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }

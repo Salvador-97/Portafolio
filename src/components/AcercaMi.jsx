@@ -10,31 +10,40 @@ import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/infor
 import { copiar } from '../utils/copiarContenido';
 import clsx from 'clsx';
 
-export function InformacionSlides({ titulo, lista, colorFondo }) {
+export function InformacionSlides({ titulo, lista, colorFondo, colorTitulo, icono }) {
     const [cambioTarjeta, setTarjeta] = useState(null);
     return (
-        <div className='text-blanco font-[700] text-center h-[90%] mt-[0.5rem]'>
-            <div className='text-[1.3rem]'>{titulo}</div>
-            <div className='relative h-[75%] w-[90%] mx-auto'>
-                {lista.map((valor) => (
-                <div key={valor} onClick={() => setTarjeta(valor === cambioTarjeta ? null : valor)}
-                className={
-                    clsx(`h-full w-full flex flex-col absolute text-center p-[0.5rem] rounded-[1rem] justify-between
-                    transition-opacity duration-500
-                    ${valor === cambioTarjeta ? 'opacity-0' : 'opacity-100'}`)}
-                style={{background: colorFondo}}>
-                    <div>
-                        {estudios[valor]?.nombre || trabajos[valor]?.nombre} <br />
-                        {estudios[valor]?.carrera || trabajos[valor]?.puesto}
-                    </div>
-                    <div>
-                        {estudios[valor]?.generacion || trabajos[valor]?.estancia} <br />
-                        {estudios[valor]?.ubicacion || trabajos[valor]?.ubicacion}
-                    </div>
-                </div>
-            ))}
+        <>
+            <div className={clsx(
+                "text-[1.5rem] text-blanco font-[700] w-full text-center py-[0.5rem] border-y-6 border-double",
+                colorTitulo
+            )}
+            // style={{ background: colorTitulo }}
+            >
+                {/* <i class="fa-solid fa-laptop-code pr-[0.5rem]"></i> */}
+                <i className={`${icono}`}></i> {titulo} <i className={`${icono}`}></i>
             </div>
-        </div>
+            <div className='relative h-[55%] w-full text-blanco'>
+                {lista.map((valor) => (
+                    <div key={valor} onClick={() => setTarjeta(valor === cambioTarjeta ? null : valor)}
+                        className={
+                            clsx(`h-full w-full flex flex-col absolute text-center p-[0.5rem] justify-between
+                    transition-opacity duration-500
+                    ${valor === cambioTarjeta ? 'opacity-0' : 'opacity-100'}`,
+                                colorFondo)}>
+                        <div className='font-[600]'>
+                            {estudios[valor]?.nombre || trabajos[valor]?.nombre} <br />
+                            {estudios[valor]?.carrera || trabajos[valor]?.puesto}
+                        </div>
+                        <div className='bg-blanco'></div>
+                        <div>
+                            {estudios[valor]?.generacion || trabajos[valor]?.estancia} <br />
+                            {estudios[valor]?.ubicacion || trabajos[valor]?.ubicacion}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </>
     );
 }
 
@@ -50,16 +59,25 @@ export function Carousel() {
             speed={800}
             className='h-[15rem] m-auto rounded-b-[1rem] sm:rounded-bl-none sm:rounded-r-[1rem] md:w-[70%]'
         >
-            <SwiperSlide className='bg-[#17854A] h-full'>
-                <div className='m-auto flex items-center w-[80%] h-[85%] text-blanco text-center font-[700] text-[0.9rem]'>
+            <SwiperSlide className='bg-[#17854A]'>
+                <div className={clsx(
+                    "m-auto flex items-center justify-center w-[80%] max-h-[12rem]",
+                    "text-blanco text-center font-[700] text-[0.9rem]"
+                )}>
                     {aboutMe}
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='bg-[#178582]'>
-                <InformacionSlides titulo='Estudios' lista={listaEstudios} colorFondo='#0F5E5C' />
+            <SwiperSlide className='bg-azulestudiosfondo flex-col'>
+                <InformacionSlides titulo='Estudios' lista={listaEstudios}
+                    colorFondo='bg-azulestudiosfondo' colorTitulo='bg-azulestudiostitulo'
+                    icono='fa-solid fa-laptop-code'
+                />
             </SwiperSlide>
-            <SwiperSlide className='bg-[#851752]'>
-                <InformacionSlides titulo='Trabajos' lista={listaTrabajos} colorFondo='#5E0F3A'/>
+            <SwiperSlide className='bg-rojotrabajosfondo flex-col'>
+                <InformacionSlides titulo='Trabajos' lista={listaTrabajos}
+                    colorFondo='bg-rojotrabajosfondo' colorTitulo='bg-rojotrabajostitulo'
+                    icono='fa-solid fa-briefcase'
+                />
             </SwiperSlide>
         </Swiper>
     );

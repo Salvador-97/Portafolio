@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { useState } from 'react';
 
 export function Tarjeta({ informacion, lenguajesProyecto }) {
-    console.log("Lenguajes: ", lenguajesProyecto);
     const [masInfo, verInformacion] = useState(false);
     return (
         <>
@@ -27,7 +26,7 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
                         <div className="font-[700]">Tecnologias</div>
                         <div className="py-[0.5rem] flex justify-center">
                             {lenguajesProyecto.map((lenguaje, index) => (
-                                !lenguajes[lenguaje].img
+                                ! lenguajes[lenguaje].img
                                 ? <i key={index} className={`${lenguajes[lenguaje].icono} pr-[0.5rem] text-[1.2rem]`}
                                   style={{ color: lenguajes[lenguaje].colorIcono }}></i>
                                 : <img alt='icono' src={lenguajes[lenguaje].img} className="w-[13%] pr-[0.5rem]" />
