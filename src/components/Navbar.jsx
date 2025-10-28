@@ -50,7 +50,7 @@ export default function Navbar() {
                 className={clsx(
                     'absolute w-full transition-all duration-500',
                     'lg:relative lg:opacity-100 lg:translate-y-0 lg:w-[38%] lg:pointer-events-auto lg:text-[1.2rem]',
-                    navAbierto && 'opacity-100 translate-y-0 bg-azulfondo z-10',
+                    navAbierto && 'opacity-100 translate-y-0 bg-azultitulosfondo rounded-[0.5rem] z-10',
                     !navAbierto && 'opacity-0 -translate-y-5 pointer-events-none',
                 )}>
                 <ul className='flex flex-col list-none lg:flex-row lg:justify-between'>

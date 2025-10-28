@@ -24,6 +24,8 @@
   --color-azulestudiosfondo: #178582;
   --color-rojotrabajostitulo: #5E0F3A;
   --color-rojotrabajosfondo: #851752;
+  --color-azultitulosfondo: #252D47;
+  --color-rosa: #EE6DA7;
 }
 
 :root { 
@@ -31,8 +33,12 @@
   --swiper-pagination-bullet-inactive-color: #cccccc;
 }
 body {
-  background: linear-gradient(to bottom, #222945 0%, #161A29 50%, #0E101C 100%);
+  /* background-image: url('/Fondo.png');
+  background-size: cover; */
+  background: linear-gradient(to right, #222945 0%, #0E101C 100%);
 }
+
+
 
 .swiper-slide {
   display: flex !important;

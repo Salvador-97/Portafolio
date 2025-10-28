@@ -3,24 +3,43 @@ import { lenguajes, listaFront, listaBack, listaSkills, skills } from "../utils/
 import clsx from "clsx";
 
 export function Habilidad({ lenguaje }) {
+    let versionMobile;
+    if (window.innerWidth < 1024) {
+        versionMobile = true;
+    } else {
+        versionMobile = false;
+    }
     return (
         <div className={
             clsx(
-                "w-[100%] flex flex-col bg-[#1A1A1D] rounded-[0.7rem] border-3 border-transparent",
-                "hover:border-blanco hover:bg-negrohover transition-colors duration-500 ease-in"
+                "w-[100%] h-[10rem] justify-center items-center flex flex-col rounded-[1rem]",
+                "bg-azultitulosfondo transition-all duration-300 ease-in",
+                "relative group border-y-3 border-transparent",
+                "hover:rounded-none hover:border-[#687FE3] hover:border-x-0 hover:bg-transparent",
             )}>
-            <div className="p-[1rem]">
-                {/* <i
-                    className={`${lenguaje.icono} text-[5rem]`}
-                    style={{ color: lenguaje.colorIcono }}>
-                </i> */}
-
-                <img src={lenguaje.img} className="w-[35%] mx-auto" />
-
+            <div className={clsx(
+                "p-[1rem] absolute transition-all duration-800 ease-in-out",
+                versionMobile 
+                ? "-translate-y-[6rem]"
+                : "group-hover:-translate-y-[6rem]",
+            )}>
+                <img className={clsx(
+                    "w-[30%] sm:w-[35%] md:w-[40%] mx-auto p-[0.5rem] rounded-[0.5rem]",
+                    "transition-all duration-300 ease-in",
+                    "group-hover:scale-[80%]",
+                    versionMobile
+                    ? "bg-blanco"
+                    : "group-hover:bg-blanco"
+                )}
+                    src={lenguaje.img} />
             </div>
             <div className={
                 clsx(
-                    "flex items-center py-[0.5rem] justify-center h-full bg-azultarjeta rounded-b-[0.7rem]",
+                    "absolute flex items-center py-[0.5rem] h-[8rem] justify-center",
+                    "transition-all duration-300 ease-in",
+                    versionMobile
+                    ? "opacity-100"
+                    : "opacity-0 group-hover:opacity-100"
                 )}>
                 <ul className={
                     clsx("text-blanco text-left text-[0.75rem] w-[90%]",
@@ -36,14 +55,39 @@ export function Habilidad({ lenguaje }) {
 }
 
 export function Skills({ skill }) {
+    const [hover, cambiarHover] = useState(false)
     return (
-        <div className="bg-[#1A1A1D] rounded-[0.5rem] flex flex-col">
-            <div className="bg-azulfondo rounded-t-[0.5rem]">
-                <i className={`
-                        ${skill.icono} text-[4rem] my-[0.5rem]`}
-                    style={{ color: skill.color }}></i>
+        <div className={clsx(
+            "rounded-[0.5rem] flex flex-col border-4",
+            "transition-colors duration-400 ease-in"
+        )}
+            style={{
+                borderColor: skill.color,
+                backgroundColor: hover ? skill.color : 'transparent',
+            }}
+        onMouseEnter={() => cambiarHover(true)}
+        onMouseLeave={() => cambiarHover(false)}
+        >
+
+            <i className={clsx(
+                `my-[0.5rem] text-[2.5rem] text-blanco ${skill.icono}`,
+                "transition-colors duration-400 ease-in"
+            )}
+            style={{
+                color: hover ? '#F3F4F6' : skill.color
+            }}
+            >
+            </i>
+            <div className={clsx(
+                "text-blanco items-center w-[80%] mx-auto py-[0.5rem] text-[0.7rem] font-[700]",
+                "transition-colors duration-400 ease-in"
+            )}
+            style={{
+                color: hover ? '#F3F4F6' : skill.color
+            }}
+            >
+                {skill.nombre}
             </div>
-            <div className="text-blanco items-center w-[80%] m-auto py-[0.5rem] text-[0.8rem] font-[700]">{skill.nombre}</div>
         </div>
     );
 }
@@ -59,20 +103,24 @@ export function Subseccion({ titulo, lista, lenguaje }) {
     return (
         <>
             <button className="cursor-pointer" type="button" onClick={() => abrirNav(!navAbierto)}>
-                <h2 className="text-[#687FE3] font-[700] text-[1.2rem] my-[1rem]">
+                <h2 className={clsx(
+                    "bg-[#687FE3] text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]", 
+                    "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem] my-[1rem]"
+                )}>
                     {titulo}
                     <i className="fa-solid fa-caret-down pl-[0.5rem]"></i>
                 </h2>
             </button>
-            <div className={
-                clsx(`grid gap-[1.2rem] overflow-hidden justify-between top-full origin-top`,
+            <div className={clsx(
+                    "grid gap-[5rem] sm:gap-[2rem] sm:gap-y-[5rem] lg:gap-y-[2rem] overflow-hidden",
+                    "justify-between top-full origin-top ",
                     `transition-all duration-500 ease-in-out transform`,
                     navAbierto
-                        ? 'opacity-100 scale-100 max-h-[2000px]'
+                        ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible mt-[4rem] lg:mt-[2rem]'
                         : 'opacity-0 scale-90 max-h-0',
                     lenguaje
                         ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-                        : 'grid-cols-3 md:grid-cols-5 w-[60%] mx-auto'
+                        : 'grid-cols-2 md:grid-cols-5 w-[85%] mx-auto'
                 )}>
                 {lista.map(item => (
                     lenguaje

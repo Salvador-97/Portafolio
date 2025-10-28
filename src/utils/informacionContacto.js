@@ -3,13 +3,14 @@ en HTML, CSS, JavaScript, React, Tailwind y Node.js. Experiencia en bases
 de datos SQL/SQLite3 y constante aprendizaje de nuevas herramientas para 
 crear soluciones completas.`
 
-export const listaInfo = ['nombre', 'telefono', 'correo', 'direccion', 'github', 'linkedin', 'cv'];
+export const listaInformacion = ['telefono', 'correo', 'direccion'];
+export const listaLinks = ['github', 'linkedin', 'cv']
 
 export const informacion = {
     nombre: {
         valor: 'Salvador Gutiérrez Olvera',
         icono: 'fa-solid fa-user',
-        color: '#983CDE',
+        color: '#fff',
         enlace: false
 
     },

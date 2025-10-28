@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 import { proyectos, listaProyectos, estado, lenguajes } from "../utils/informacionProyectos";
 import clsx from 'clsx';
@@ -10,10 +12,16 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
     return (
         <>
             <div className={clsx(
-                "rounded-[1.5rem] mx-auto w-[100%] pb-[1rem] flex flex-col"
+                "rounded-[1.5rem] mx-auto w-[100%] pb-[1rem] flex flex-col bg-azultitulosfondo group",
+                "transition-colors duration-400 ease-in",
+                "hover:bg-transparent"
             )}>
-                <div className='text-center rounded-t-[1.5rem] w-full bg-moradotarjeta text-blanco'>
-                    <i className={`${informacion.icono} fa-6x py-[0.8rem]`}></i>
+                <div className={clsx(
+                    "text-center w-full text-blanco bg-rosa border-b-2 border-transparent rounded-t-[1.5rem]",
+                    "transition-colors duration-400 ease-in",
+                    "group-hover:bg-transparent group-hover:border-b-rosa"
+                )}>
+                    <i className={`${informacion.icono} fa-6x py-[0.8rem] transition-colors duration-400 ease-in group-hover:text-[#EE6DA7]`}></i>
                 </div>
                 <div className='relative flex justify-center'>
                     <div className={
@@ -26,10 +34,10 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
                         <div className="font-[700]">Tecnologias</div>
                         <div className="py-[0.5rem] flex justify-center">
                             {lenguajesProyecto.map((lenguaje, index) => (
-                                ! lenguajes[lenguaje].img
-                                ? <i key={index} className={`${lenguajes[lenguaje].icono} pr-[0.5rem] text-[1.2rem]`}
-                                  style={{ color: lenguajes[lenguaje].colorIcono }}></i>
-                                : <img alt='icono' src={lenguajes[lenguaje].img} className="w-[13%] pr-[0.5rem]" />
+                                !lenguajes[lenguaje].img
+                                    ? <i key={index} className={`${lenguajes[lenguaje].icono} pr-[0.5rem] text-[1.2rem]`}
+                                        style={{ color: lenguajes[lenguaje].colorIcono }}></i>
+                                    : <img alt='icono' src={lenguajes[lenguaje].img} className="w-[13%] pr-[0.5rem]" />
                             ))}
                         </div>
                         <div className="pb-[1rem]">
@@ -56,7 +64,7 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
                             <div>
                                 Progreso
                             </div>
-                            <div className="h-[0.5rem] bg-[#8A5CF6] rounded-full overflow-hidden my-[0.5rem]"
+                            <div className="h-[0.5rem] bg-rosa rounded-full overflow-hidden my-[0.5rem]"
                                 style={{ width: `${informacion.progreso * 100}%` }}>
                             </div>
                             <p className="text-xs text-[#ccc] mt-1">
@@ -66,8 +74,8 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
                         <a href={informacion.link} className={clsx(
                             'w-full my-[0.5rem] font-[700]',
                             masInfo ? 'pointer-events-auto' : 'pointer-events-none'
-                            )}>
-                        Visitar sitio
+                        )}>
+                            Visitar sitio
                             <i className="fa-solid fa-up-right-from-square text-[0.8rem] text-blanco pl-[0.5rem]"></i>
                         </a>
                     </div>
@@ -85,10 +93,19 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
 
 export function SlidesProyectos() {
     return (
-        <>
+        <div className='flex mx-auto w-[90%]'>
+                <button className="custom-prev">
+                    <i className={clsx(
+                        "fa-solid fa-circle-arrow-left pr-[0.8rem] text-[1.3rem] text-[#C7C7C7]",
+                        "transition-colors duration-300 ease-in hover:text-blanco md:text-[2rem]"
+                    )}></i>
+                </button>
             <Swiper
                 modules={[Pagination, Autoplay, Navigation]}
-                navigation={true}
+                navigation={{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev'
+                }}
                 pagination={{ el: '.custom-pagination', clickable: true }}
                 spaceBetween={20}
                 slidesPerView={1}
@@ -104,28 +121,21 @@ export function SlidesProyectos() {
                 className='rounded-b-[1rem] m-auto h-[25rem]'
             >
                 {proyectos.map(proyecto => (
-                    <SwiperSlide key={proyecto} className='bg-azulfondo rounded-[1.5rem]'>
-                        <Tarjeta  informacion={listaProyectos[proyecto]} lenguajesProyecto={listaProyectos[proyecto].lenguajes} />
+                    <SwiperSlide key={proyecto} className={clsx(
+                        "rounded-[1.5rem] border-2 border-transparent",
+                        "hover:border-rosa"
+                    )}>
+                        <Tarjeta informacion={listaProyectos[proyecto]} lenguajesProyecto={listaProyectos[proyecto].lenguajes} />
                     </SwiperSlide>
                 ))}
-                {/* <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
-                <Tarjeta informacion={proyectoPortafolio} iconos={iconos.portafolio} lenguajesProyecto={lenguajesPortafolio} />
-            </SwiperSlide>
-            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
-                <Tarjeta informacion={proyectoContenedores} iconos={iconos.contenedores} lenguajesProyecto={lenguajesContenedores} />
-            </SwiperSlide>
-            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
-                <Tarjeta informacion={proyectoMarbetes} iconos={iconos.marbetes} lenguajesProyecto={lenguajesMarbetes} />
-            </SwiperSlide>
-            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
-                <Tarjeta informacion={proyectoSeries} iconos={iconos.series} lenguajesProyecto={lenguajesSeries} />
-            </SwiperSlide>
-            <SwiperSlide className='bg-azulfondo rounded-[1.5rem]'>
-                <Tarjeta informacion={proyectoHospital} iconos={iconos.hospital} lenguajesProyecto={lenguajesHospital} />
-            </SwiperSlide> */}
             </Swiper>
-            <div className="custom-pagination mt-4 text-center"></div>
-        </>
+                <button className="custom-next">
+                    <i className={clsx(
+                        "fa-solid fa-circle-arrow-right pl-[0.8rem] text-[1.3rem] text-[#C7C7C7]",
+                        "transition-colors duration-300 ease-in hover:text-blanco md:text-[2rem]"
+                    )}></i>
+                </button>
+        </div>
     );
 }
 

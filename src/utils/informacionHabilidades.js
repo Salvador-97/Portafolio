@@ -1,5 +1,5 @@
-export const listaFront = ['html', 'css', 'javascript', 'react']
-export const listaBack = ['python', 'sql', 'node']
+export const listaFront = ['html', 'css', 'javascript', 'react', 'tailwind']
+export const listaBack = ['python', 'sql', 'node', 'flask']
 
 const htmlJSON = {
     icono: 'fa-brands fa-html5',
@@ -81,6 +81,28 @@ const nodeJSON = {
     }
 }
 
+const tailwindJSON = {
+    icono: 'devicon-tailwindcss-original',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+    colorIcono: '#fff',
+    conocimiento: {
+        item1: 'Creación de servidores REST y APIs básicas.',
+        item2: 'Rutas, middlewares y conexión con bases de datos.',
+        item3: 'Gestión de formularios y peticiones HTTP.',
+    }
+}
+
+const flaskJSON = {
+    icono: 'devicon-flask-original-wordmark',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg',
+    colorIcono: '#fff',
+    conocimiento: {
+        item1: 'Creación de servidores REST y APIs básicas.',
+        item2: 'Rutas, middlewares y conexión con bases de datos.',
+        item3: 'Gestión de formularios y peticiones HTTP.',
+    }
+}
+
 export const lenguajes = {
     html: htmlJSON,
     css: cssJSON,
@@ -88,7 +110,9 @@ export const lenguajes = {
     python: pythonJSON,
     sql: sqlJSON,
     react: reactJSON,
-    node: nodeJSON
+    node: nodeJSON,
+    tailwind: tailwindJSON,
+    flask: flaskJSON
 }
 
 export const listaSkills = ['disciplina', 'resultados', 'organizacion', 'aprendizaje', 'equipo'];
@@ -101,7 +125,7 @@ const disciplinaJSON = {
 
 const resultadosJSON = {
     nombre: 'Orientación a resultados',
-    icono: 'fa-solid fa-clipboard-check',
+    icono: 'fa-solid fa-list-check',
     color: '#3AB330'
 }
 

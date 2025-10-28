@@ -4,14 +4,16 @@ import Proyectos from './Proyectos.jsx';
 import AcercaMi from './AcercaMi.jsx';
 import clsx from 'clsx';
 
-export function Seccion({ Titulo, color }) {
+export function Seccion({ Titulo }) {
     return (
         <div className={
-            clsx('w-[90%] mx-auto text-center font-[700] text-[1.2rem] mb-[1rem]',
-                'lg:text-[1.5rem]'
-            )}
-            style={{ color: color }}>
-            <i className="fa-solid fa-terminal pr-[0.5rem]"></i>{Titulo}
+            clsx('w-[70%] sm:w-[50%] lg:w-[40%] rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem] mb-[1rem] bg-azultitulosfondo',
+                'lg:text-[1.5rem] text-blanco py-[0.5rem]'
+            )}>
+            {/* <img src="Portafolio/bracket.png" alt="" className='w-[20%]'/>  */}
+            <i className="fa-solid fa-chevron-left mr-[0.5rem]"></i>
+            {Titulo}
+            <i class="fa-solid fa-chevron-right ml-[0.5rem]"></i>
         </div>
     );
 }
@@ -19,17 +21,17 @@ export function Seccion({ Titulo, color }) {
 export default function Secciones() {
     return (
         <>
-            <div className='w-[90%] mx-auto mt-[2rem]' id='acerca'>
-                <Seccion Titulo="Sobre mi..." color='#fff' />
+            <div className='w-[85%] mx-auto mt-[2rem]' id='acerca'>
+                <Seccion Titulo="Salvador Gutiérre Olvera" />
                 <AcercaMi />
             </div>
             
             <div className='w-[85%] mx-auto mt-[2rem]' id='habilidades'>
-                <Seccion Titulo="Habilidades" color='#4F6CF4'/>
+                <Seccion Titulo="Habilidades"/>
                 <Habilidades />
             </div>
-            <div className='w-4/5 mx-auto my-[2rem]' id='proyectos'>
-                <Seccion Titulo="Proyectos" color='#8A5CF6'/>
+            <div className='w-full mx-auto my-[2rem]' id='proyectos'>
+                <Seccion Titulo="Proyectos"/>
                 <Proyectos />
             </div>
         </>

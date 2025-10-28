@@ -108,7 +108,7 @@ export const portafolio = {
     icono: 'fa-solid fa-address-card',
     nombre: 'Portafolio Web',
     descripcion: 'Sitio web diseñado para presentar mis proyectos, habilidades y experiencia laboral.',
-    link: 'https://salvador-97.github.io/Portafolio/',
+    link: 'https://inbound-manager-web.onrender.com',
     desarrollo: true,
     estado: true,
     progreso: 1,
