@@ -75,9 +75,9 @@ export const contenedores = {
     icono: 'fa-solid fa-truck-ramp-box',
     nombre: 'Sistema de control y registro de contenedores',
     descripcion: 'Aplicación web para gestionar contenedores y productos en un almacén, con seguimiento de tarimas y ubicación.',
-    link: 'https://github.com/Salvador-97/Inbound_Manager-Web',
+    link: 'https://inbound-manager-web.onrender.com',
     desarrollo: false,
-    estado: false,
+    estado: true,
     progreso: 1,
     lenguajes: ['bootstrap', 'javascript', 'python', 'flask', 'sql']
 }
@@ -108,7 +108,7 @@ export const portafolio = {
     icono: 'fa-solid fa-address-card',
     nombre: 'Portafolio Web',
     descripcion: 'Sitio web diseñado para presentar mis proyectos, habilidades y experiencia laboral.',
-    link: 'https://inbound-manager-web.onrender.com',
+    link: 'https://github.com/Salvador-97/Portafolio',
     desarrollo: true,
     estado: true,
     progreso: 1,

@@ -1,16 +1,38 @@
-# React + Vite
+# Portafolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio donde muestro mis capacidades de desarrollo.
 
-Currently, two official plugins are available:
+![Badge en Desarollo](https://img.shields.io/badge/estado-completo-green)
+![Badge de Versión](https://img.shields.io/badge/version-2.0.0-blue)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias
+- React
+- Tailwind
+- JavaScript
 
-## React Compiler
+## Contenido
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Mi portafolio se divide en 3 secciones, la primera donde hablo de mi, de ahí mis habilidades dentro de la programación, y por último la aplicación de mis conocimientos.
 
-## Expanding the ESLint configuration
+### Acerca de mi
+Hablo un poco de mi, y pongo mis estudios, y mi experiencia en el mundo laboral. Así como mi información basica junto con enlaces de interes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Acerca de mi](/public/img_readme/Acerca.PNG)
+
+### Habilidades
+
+En esta sección lo divido en tres subsecciones en donde separo mi conocimiento en Front-End, Back-End y mis Soft-Skill.
+
+![Front](/public/img_readme/Front.PNG)
+
+![Back](/public/img_readme/Back.PNG)
+
+![Soft](/public/img_readme/Soft.PNG)
+
+### Proyectos
+Muestro mis diferentes proyextos en donde se puede observar cada una de las tecnologias que use. En la parte de la descripción puede hacer un link que haga referencia a la página en línea.
+
+![Proyectos](/public/img_readme/Habilidades.PNG)
+
+## Autores
+[<img src="https://avatars.githubusercontent.com/Salvador-97" width=115><br><sub>Salvador Gutiérrez Olvera</sub>](https://github.com/Salvador-97)
