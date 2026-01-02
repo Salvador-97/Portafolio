@@ -75,9 +75,10 @@ export function Tarjeta({ informacion, lenguajesProyecto }) {
                             'w-full my-[0.5rem] font-[700]',
                             masInfo ? 'pointer-events-auto' : 'pointer-events-none'
                         )}>
-                            Visitar sitio
+                            Más información
                             <i className="fa-solid fa-up-right-from-square text-[0.8rem] text-blanco pl-[0.5rem]"></i>
                         </a>
+                        
                     </div>
                 </div>
                 <button type='button' className='cursor-pointer w-full text-blanco z-20' onClick={() => verInformacion(!masInfo)}>

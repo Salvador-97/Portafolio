@@ -58,13 +58,14 @@ export function Skills({ skill }) {
     const [hover, cambiarHover] = useState(false)
     return (
         <div className={clsx(
-            "rounded-[0.5rem] flex flex-col border-4",
+            "rounded-[0.5rem] flex flex-col bg-azulfondo justify-center",
             "transition-colors duration-400 ease-in"
         )}
+            /*
             style={{
                 borderColor: skill.color,
                 backgroundColor: hover ? skill.color : 'transparent',
-            }}
+    }} */
         onMouseEnter={() => cambiarHover(true)}
         onMouseLeave={() => cambiarHover(false)}
         >
@@ -82,9 +83,6 @@ export function Skills({ skill }) {
                 "text-blanco items-center w-[80%] mx-auto py-[0.5rem] text-[0.7rem] font-[700]",
                 "transition-colors duration-400 ease-in"
             )}
-            style={{
-                color: hover ? '#F3F4F6' : skill.color
-            }}
             >
                 {skill.nombre}
             </div>
@@ -101,8 +99,8 @@ export function Subseccion({ titulo, lista, lenguaje }) {
     }
     const [navAbierto, abrirNav] = useState(navAbiertoMobile);
     return (
-        <>
-            <button className="cursor-pointer" type="button" onClick={() => abrirNav(!navAbierto)}>
+        <div className="my-auto">
+            <button className="cursor-pointer w-full" type="button" onClick={() => abrirNav(!navAbierto)}>
                 <h2 className={clsx(
                     "bg-[#687FE3] text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]", 
                     "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem] my-[1rem]"
@@ -112,15 +110,15 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                 </h2>
             </button>
             <div className={clsx(
-                    "grid gap-[5rem] sm:gap-[2rem] sm:gap-y-[5rem] lg:gap-y-[2rem] overflow-hidden",
+                    "grid overflow-hidden",
                     "justify-between top-full origin-top ",
                     `transition-all duration-500 ease-in-out transform`,
                     navAbierto
                         ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible mt-[4rem] lg:mt-[2rem]'
                         : 'opacity-0 scale-90 max-h-0',
                     lenguaje
-                        ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-                        : 'grid-cols-2 md:grid-cols-5 w-[85%] mx-auto'
+                        ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[5rem] md:gap-[2rem]'
+                        : 'grid-cols-2 md:grid-cols-5 w-[85%] gap-[1rem] mx-auto mt-[1rem]'
                 )}>
                 {lista.map(item => (
                     lenguaje
@@ -128,7 +126,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                         : <Skills key={item} skill={skills[item]} />
                 ))}
             </div>
-        </>
+        </div>
     );
 }
 

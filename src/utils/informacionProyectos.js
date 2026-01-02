@@ -68,7 +68,23 @@ export const lenguajes = {
         icono: 'devicon-dotnetcore-plain',
         colorIcono: '',
         img: false
-    }
+    },
+    mongoDB: {
+        icono: '',
+        colorIcono: '',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg'
+    },
+    sass: {
+        icono: '',
+        colorIcono: '',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg'
+    },
+    axios: {
+        icono: '',
+        colorIcono: '',
+        img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg'
+    },
+
 }
 
 export const contenedores = {
@@ -79,7 +95,7 @@ export const contenedores = {
     desarrollo: false,
     estado: true,
     progreso: 1,
-    lenguajes: ['bootstrap', 'javascript', 'python', 'flask', 'sql']
+    lenguajes: ['bootstrap', 'javascript', 'sass', 'python', 'flask', 'sql']
 }
 
 export const marbetes = {
@@ -97,11 +113,11 @@ export const series = {
     icono: 'fa-solid fa-circle-play',
     nombre: 'Plataforma de series web',
     descripcion: 'Sitio web para explorar y ver series, con información detallada de temporadas y capítulos.',
-    link: 'https://github.com/Salvador-97/Rari-Caturas-TV/tree/fix-css',
+    link: 'https://rari-caturas-tv.onrender.com/',
     desarrollo: true,
-    estado: false,
-    progreso: 0.8,
-    lenguajes: ['html', 'css', 'javascript', 'sql', 'node']
+    estado: true,
+    progreso: 0.9,
+    lenguajes: ['javascript', 'mongoDB', 'node', 'axios']
 }
 
 export const portafolio = {
@@ -134,7 +150,7 @@ export const listaProyectos = {
     hospital: hospital
 }
 
-export const proyectos = ['portafolio', 'contenedores', 'series', 'marbetes', 'hospital']
+export const proyectos = ['contenedores', 'portafolio', 'series', 'marbetes', 'hospital']
 
 export const lenguajesContenedores = ['html', 'css', 'bootstrap', 'javascript', 'python', 'sql'];
 export const lenguajesMarbetes = ['python', 'cvs', 'excel'];

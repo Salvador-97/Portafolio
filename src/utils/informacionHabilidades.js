@@ -1,5 +1,5 @@
 export const listaFront = ['html', 'css', 'javascript', 'react', 'tailwind']
-export const listaBack = ['python', 'sql', 'node', 'flask']
+export const listaBack = ['python', 'sql', 'node', 'flask', 'mongo']
 
 const htmlJSON = {
     icono: 'fa-brands fa-html5',
@@ -103,6 +103,17 @@ const flaskJSON = {
     }
 }
 
+const mongoJSON = {
+    icono: 'devicon-mongodb-plain-wordmark colored',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg',
+    colorIcono: '#fff',
+    conocimiento: {
+        item1: 'Creación de servidores REST y APIs básicas.',
+        item2: 'Rutas, middlewares y conexión con bases de datos.',
+        item3: 'Gestión de formularios y peticiones HTTP.',
+    }
+}
+
 export const lenguajes = {
     html: htmlJSON,
     css: cssJSON,
@@ -112,7 +123,8 @@ export const lenguajes = {
     react: reactJSON,
     node: nodeJSON,
     tailwind: tailwindJSON,
-    flask: flaskJSON
+    flask: flaskJSON,
+    mongo: mongoJSON
 }
 
 export const listaSkills = ['disciplina', 'resultados', 'organizacion', 'aprendizaje', 'equipo'];

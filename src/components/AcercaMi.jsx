@@ -42,7 +42,7 @@ export function InformacionSlides({ titulo, lista, colorFondo, colorTitulo, icon
 
 export function Carousel() {
     return (
-        <div className='sm:row-span-2'>
+        <div className='sm:col-span-2 w-full mx-auto'>
             <Swiper
                 modules={[Pagination, Autoplay]}
                 pagination={{ el: '.custom-pagination', clickable: true }}
@@ -126,9 +126,9 @@ export function Contacto({ lista, titulo }) {
 export default function AcercaMi() {
     return (
         <div className="mx-auto grid gap-2 grid-cols-1 sm:grid-cols-2 md:gap-4 lg:w-[60%]">
-            <Carousel />
             <Contacto lista={listaLinks} titulo={"Links de contacto"} />
             <Contacto lista={listaInformacion} titulo={"Información"} />
+            <Carousel />
         </div>
     );
 }

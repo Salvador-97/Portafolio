@@ -21,19 +21,19 @@ export function Seccion({ Titulo }) {
 export default function Secciones() {
     return (
         <>
-            <div className='w-[85%] mx-auto mt-[2rem]' id='acerca'>
+            <section className='w-[85%] mx-auto mt-[2rem]' id='acerca'>
                 <Seccion Titulo="Salvador Gutiérre Olvera" />
                 <AcercaMi />
-            </div>
+            </section>
             
-            <div className='w-[85%] mx-auto mt-[2rem]' id='habilidades'>
+            <section className='w-[85%] mx-auto mb-[2rem]' id='habilidades'>
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
-            </div>
-            <div className='w-full mx-auto my-[2rem]' id='proyectos'>
+            </section>
+            <section className='w-full mx-auto' id='proyectos'>
                 <Seccion Titulo="Proyectos"/>
                 <Proyectos />
-            </div>
+            </section>
         </>
     )
 }

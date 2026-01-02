@@ -6,7 +6,7 @@ export function ItemsNav({ nombre, href }) {
     return (
         <li className="py-[0.2rem]">
             <a href={href} 
-            className='no-underline text-blanco font-[700] hover:text-morado transition-all duration-300 ease-in'>
+            className='no-underline text-blanco font-[700] hover:text-[#3462CF] transition-all duration-300 ease-in'>
                 {nombre}</a>
         </li>
     );
@@ -25,7 +25,7 @@ export default function Navbar() {
                 )}>
                 <div className={
                     clsx('text-blanco font-[700]',
-                        'hover:text-[#DD8FFA] cursor-pointer duration-700 transition-all ease-out transform scale-110',
+                        'hover:text-[#3462CF] cursor-pointer duration-700 transition-all ease-out transform scale-110',
                         'sm:text-[1.4rem]',
                         ''
                     )}>
