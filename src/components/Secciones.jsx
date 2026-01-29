@@ -7,12 +7,12 @@ import clsx from 'clsx';
 export function Seccion({ Titulo }) {
     return (
         <div className={
-            clsx('w-[70%] sm:w-[50%] lg:w-[40%] rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem] mb-[1rem] bg-azultitulosfondo',
-                'lg:text-[1.5rem] text-blanco py-[0.5rem]'
+            clsx('w-[70%] sm:w-[50%] lg:w-[45%] rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem] mb-[1rem]',
+                'lg:text-[1.8rem] text-blanco py-[0.5rem]'
             )}>
             {/* <img src="Portafolio/bracket.png" alt="" className='w-[20%]'/>  */}
             <i className="fa-solid fa-chevron-left mr-[0.5rem]"></i>
-            {Titulo}
+            <span className='font-titulos'>{Titulo}</span>
             <i class="fa-solid fa-chevron-right ml-[0.5rem]"></i>
         </div>
     );
@@ -22,7 +22,7 @@ export default function Secciones() {
     return (
         <>
             <section className='w-[85%] mx-auto mt-[2rem]' id='acerca'>
-                <Seccion Titulo="Salvador Gutiérre Olvera" />
+                {/* <Seccion Titulo="Salvador Gutierrez Olvera" /> */}
                 <AcercaMi />
             </section>
             

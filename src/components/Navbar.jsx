@@ -6,7 +6,7 @@ export function ItemsNav({ nombre, href }) {
     return (
         <li className="py-[0.2rem]">
             <a href={href} 
-            className='no-underline text-blanco font-[700] hover:text-[#3462CF] transition-all duration-300 ease-in'>
+            className='no-underline p-3 text-blanco font-[700] hover:bg-letraTitulos transition-all duration-300 ease-in'>
                 {nombre}</a>
         </li>
     );
@@ -30,7 +30,7 @@ export default function Navbar() {
                         ''
                     )}>
                     <i className="fa-solid fa-code pr-[0.5rem]"></i>
-                    Salvador Gutiérrez Olvera
+                    Mi portafolio
                     <i className="fa-solid fa-code pl-[0.5rem]"></i>
                 </div>
                 <div className={

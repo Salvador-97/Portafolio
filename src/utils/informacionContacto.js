@@ -1,7 +1,8 @@
-export const aboutMe = `Apasionado por el desarrollo web, con proyectos 
-en HTML, CSS, JavaScript, React, Tailwind y Node.js. Experiencia en bases 
-de datos SQL/SQLite3 y constante aprendizaje de nuevas herramientas para 
-crear soluciones completas.`
+import { FileCodeCorner, Github, Linkedin, Mail, MapPin, Phone,  } from "lucide-react";
+
+export const aboutMe = `Desarrollo aplicaciones web full-stack, 
+desde la lógica de backend hasta interfaces frontend funcionales, 
+enfocadas en claridad, mantenibilidad y buen uso de datos.`
 
 export const listaInformacion = ['telefono', 'correo', 'direccion'];
 export const listaLinks = ['github', 'linkedin', 'cv']
@@ -16,46 +17,47 @@ export const informacion = {
     },
     telefono: {
         valor: '5582214610',
-        icono: 'fa-solid fa-phone',
+        icono: Phone,
         color: '#3C88DE',
         enlace: false
 
     },
     correo: {
         valor: 'salvador.go_97@hotmail.com',
-        icono: 'fa-solid fa-envelope',
+        icono: Mail,
         color: '#DE9E3C',
         enlace: false
     },
     direccion: {
         valor: 'Teoloyucan, Edo. de Méx.',
-        icono: 'fa-solid fa-location-dot',
+        icono: MapPin,
         color: '#DE3C3C',
         enlace: false
     },
     github: {
         valor: 'Salvador_97',
-        icono: 'fa-brands fa-github',
+        icono: Github,
         color: '#fff',
         link: 'https://github.com/Salvador-97',
         enlace: true
     },
     linkedin: {
         valor: 'salvadorgo97',
-        icono: 'fa-brands fa-linkedin',
+        icono: Linkedin,
         color: '#2787F5',
         link: 'https://www.linkedin.com/in/salvadorgo97/',
         enlace: true
     }
     ,
     cv: {
-        valor: 'CV completo',
-        icono: 'fa-solid fa-circle-down',
+        valor: 'CV',
+        icono: FileCodeCorner,
         color: '#2ECF29',
-        link: 'https://drive.google.com/file/d/1psmJqivPcdudaGyOUXT4d8vzM_f25rN6/view?usp=sharing',
+        link: '/CV.pdf',
         enlace: true
     }
 }
+
 
 export const listaEstudios = ['bachillerato', 'universidad'];
 

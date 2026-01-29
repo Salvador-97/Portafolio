@@ -13,25 +13,33 @@ export function Habilidad({ lenguaje }) {
         <div className={
             clsx(
                 "w-[100%] h-[10rem] justify-center items-center flex flex-col rounded-[1rem]",
-                "bg-azultitulosfondo transition-all duration-300 ease-in",
+                "bg-[var(--color-fondo)] transition-all duration-300 ease-in",
                 "relative group border-y-3 border-transparent",
                 "hover:rounded-none hover:border-[#687FE3] hover:border-x-0 hover:bg-transparent",
-            )}>
+            )}
+                style={{
+                    "--color-fondo": lenguaje.colorIcono,
+                    // backgroundImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0))"                    
+                }}
+                >
             <div className={clsx(
                 "p-[1rem] absolute transition-all duration-800 ease-in-out",
                 versionMobile 
                 ? "-translate-y-[6rem]"
                 : "group-hover:-translate-y-[6rem]",
             )}>
-                <img className={clsx(
-                    "w-[30%] sm:w-[35%] md:w-[40%] mx-auto p-[0.5rem] rounded-[0.5rem]",
-                    "transition-all duration-300 ease-in",
+                <i className={clsx(
+                    "text-[4rem] text-[#fff] mx-auto p-[0.5rem] rounded-[0.5rem]",
+                    "group-hover:text-[var(--color-hover)] transition-all duration-300 ease-in",
                     "group-hover:scale-[80%]",
+                    `${lenguaje.icono}`,
                     versionMobile
                     ? "bg-blanco"
                     : "group-hover:bg-blanco"
                 )}
-                    src={lenguaje.img} />
+                    style={{"--color-hover": lenguaje.colorIcono}}
+                    //src={lenguaje.img} 
+                    ></i>
             </div>
             <div className={
                 clsx(
@@ -102,7 +110,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
         <div className="my-auto">
             <button className="cursor-pointer w-full" type="button" onClick={() => abrirNav(!navAbierto)}>
                 <h2 className={clsx(
-                    "bg-[#687FE3] text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]", 
+                    "bg-titulos text-letraTitulos mx-auto py-[0.5rem] rounded-[0.5rem]", 
                     "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem] my-[1rem]"
                 )}>
                     {titulo}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 @import "tailwindcss";
 
@@ -9,6 +10,7 @@
 }
 
 @theme {
+  --font-titulos: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --color-morado: #DD8FFA;
   --color-blanco: #F3F4F6;
   --color-gris: #D6D6D6;
@@ -26,22 +28,33 @@
   --color-rojotrabajosfondo: #851752;
   --color-azultitulosfondo: #252D47;
   --color-rosa: #EE6DA7;
+  --color-titulos: #F5EEFF;
+  --color-letraTitulos: #4B1D6E;
 }
 
-:root { 
+:root {
   --swiper-theme-color: #fff !important;
   --swiper-pagination-bullet-inactive-color: #cccccc;
 }
+
 body {
-  /* background-image: url('/Fondo.png');
-  background-size: cover; */
-  background: linear-gradient(to right, #222945 0%, #0E101C 100%);
+  /* background-image: url('/Nuevo_Fondo.png');
+  background-size: cover;
+  background-position: center; */
+  /* background: linear-gradient(to right, #222945 0%, #0E101C 100%); */
+  background-color:hsla(266,57%,5%,1);
+background-image:
+radial-gradient(at 0% 100%, hsla(265,61%,11%,1) 0px, transparent 50%),
+radial-gradient(at 80% 100%, hsla(265,66%,19%,1) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(264,58%,27%,1) 0px, transparent 50%);
 }
 
 
 
 .swiper-slide {
   display: flex !important;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
 }
