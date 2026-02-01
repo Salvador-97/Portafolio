@@ -1,8 +1,6 @@
-import { FileCodeCorner, Github, Linkedin, Mail, MapPin, Phone,  } from "lucide-react";
+import { ArrowDownToLine, Github, Linkedin, Mail, MapPin, Phone,  } from "lucide-react";
 
-export const aboutMe = `Desarrollo aplicaciones web full-stack, 
-desde la lógica de backend hasta interfaces frontend funcionales, 
-enfocadas en claridad, mantenibilidad y buen uso de datos.`
+
 
 export const listaInformacion = ['telefono', 'correo', 'direccion'];
 export const listaLinks = ['github', 'linkedin', 'cv']
@@ -51,7 +49,7 @@ export const informacion = {
     ,
     cv: {
         valor: 'CV',
-        icono: FileCodeCorner,
+        icono: ArrowDownToLine,
         color: '#2ECF29',
         link: '/CV.pdf',
         enlace: true

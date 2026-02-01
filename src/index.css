@@ -30,6 +30,8 @@
   --color-rosa: #EE6DA7;
   --color-titulos: #F5EEFF;
   --color-letraTitulos: #4B1D6E;
+  --color-rosaBoton: #7117EA;
+  --background-image-gradienteTitulo: linear-gradient(to right, #7117EA, #EA6080);
 }
 
 :root {
@@ -42,14 +44,12 @@ body {
   background-size: cover;
   background-position: center; */
   /* background: linear-gradient(to right, #222945 0%, #0E101C 100%); */
-  background-color:hsla(266,57%,5%,1);
-background-image:
-radial-gradient(at 0% 100%, hsla(265,61%,11%,1) 0px, transparent 50%),
-radial-gradient(at 80% 100%, hsla(265,66%,19%,1) 0px, transparent 50%),
-radial-gradient(at 0% 0%, hsla(264,58%,27%,1) 0px, transparent 50%);
+  background-color: hsla(266, 57%, 5%, 1);
+  background-image:
+    radial-gradient(at 0% 100%, hsla(265, 61%, 11%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(265, 66%, 19%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(264, 58%, 27%, 1) 0px, transparent 50%);
 }
-
-
 
 .swiper-slide {
   display: flex !important;
@@ -57,4 +57,16 @@ radial-gradient(at 0% 0%, hsla(264,58%,27%,1) 0px, transparent 50%);
   /* Centra horizontalmente */
   align-items: center;
   /* Centra verticalmente */
+}
+
+.gradienteTitulo {
+  background: linear-gradient(to right, #7117EA, #EA6080);
+
+  /* 2. Recortamos el fondo para que siga la forma del texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 3. Hacemos que el color original del texto sea transparente */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }

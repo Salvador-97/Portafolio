@@ -3,4 +3,5 @@ export const linksNav = [
         // { nombre: "Inicio", href: "#inicio" },
         { nombre: "Proyectos", href: "#proyectos" },
         { nombre: "Habilidades", href: "#habilidades" },
+        { nombre: "Experiencia", href: "#experiencia"}
     ]

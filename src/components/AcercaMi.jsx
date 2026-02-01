@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from "swiper/modules";
 import toast, { Toaster } from 'react-hot-toast';
+import { ArrowDownToLine } from "lucide-react";
 import 'swiper/css';
 import 'swiper/css/pagination'
 import '../index.css'
 
-import { aboutMe, informacion, listaInformacion, listaLinks } from '../utils/informacionContacto';
+import { informacion, listaInformacion, listaLinks } from '../utils/informacionContacto';
 import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
 import { Seccion } from './Secciones';
 import { copiar } from '../utils/copiarContenido';
@@ -89,8 +90,8 @@ export function Enlace({ info }) {
     return (
         <>
             <a href={informacion[info].link} target='_blank'
-                className='text-blanco font-[600] text-[2.5rem]'>
-                <Icon />
+                className='text-[2.5rem]'>
+                <Icon className="w-4 h-4" strokeWidth={1.5} />
             </a>
         </>
     );
@@ -104,38 +105,30 @@ export function Dato({ info }) {
     });
     return (
         <>
-            <div className='text-gris font-[500]'
+            <div className=''
                 onClick={() => {
                     const textoACopiar = informacion[info].valor;
                     navigator.clipboard.writeText(textoACopiar);
                     notify();
                 }}>
-                <Icon />
+                <Icon className="w-4 h-4" />
                 <Toaster />
             </div>
         </>
     );
 }
 
-export function Contacto({ lista, titulo }) {
+export function Contacto({ lista }) {
     return (
-        <div className=''>
-            <h3 className={clsx(
-                "font-[700] text-letraTitulos text-center border-b-2 border-transparent rounded-[0.4rem]",
-                "py-[0.5rem] mb-[0.5rem] bg-titulos"
-            )}>
-                {titulo}
-            </h3>
-            <ul className={clsx(
-                "flex flex-row text-center text-[1rem] mx-auto my-[0.5rem] py-[0.5rem] rounded-[0.5rem]",
-            )}>
-                {lista.map((info, index) => (
-                    <li key={index}>
-                        {informacion[info].enlace ? <Enlace info={info} /> : <Dato info={info} />}
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ul className={clsx(
+            "flex flex-row text-center text-[1rem] my-[1rem] py-[0.5rem]",
+        )}>
+            {lista.map((info, index) => (
+                <li key={index} className='p-[0.6rem] mx-[0.2rem] border rounded-[2rem] text-blanco'>
+                    {informacion[info].enlace ? <Enlace info={info} /> : <Dato info={info} />}
+                </li>
+            ))}
+        </ul>
     );
 }
 
@@ -148,27 +141,40 @@ export function foto() {
 }
 
 export default function AcercaMi() {
+    const aboutMe = (
+        <>
+            Desarrollo aplicaciones web <strong>full-stack</strong>,
+            desde la lógica de <span className="text-blue-500">backend</span> hasta interfaces
+            <strong>frontend</strong> funcionales,
+            enfocadas en claridad, <span className="text-green-500">mantenibilidad</span> y buen uso de datos.
+        </>
+    )
     return (
-        <div className='flex'>
-            <div className="w-[50%]">
+        <>
+            <div className="w-full flex flex-col items-center">
                 <h3 className={clsx(
                     "font-[700] text-letraTitulos text-center",
                     "border-b-2 border-transparent rounded-[0.4rem]",
                     "py-[0.5rem] mb-[0.5rem]"
                 )}> <Seccion Titulo="¡Hola mundo! Soy Salvador Gutiérrez Olvera" />
                 </h3>
-                <p>Desarrollo aplicaciones web full-stack,
-                    desde la lógica de backend hasta interfaces frontend funcionales,
-                    enfocadas en claridad, mantenibilidad y buen uso de datos.</p>
+                <p className='text-blanco'>{aboutMe}</p>
+                <a href='Portafolio/CV.pdf' download className={clsx(
+                    'w-[60%] mt-4 border-rosaBoton border-2 text-rosaBoton p-2 rounded-[0.5rem]',
+                    'flex justify-around'
+                )}>
+                    <ArrowDownToLine />Descargar CV
+                </a>
             </div>
-            <div className='w-[50%]'>
-                <div className=' border-2 border-amber-50 text-center'>
-                    <i class="fa-regular fa-user text-[15rem] text-amber-50"></i>
+            <div className='w-full'>
+                <div className='text-center'>
+                    <i class="fa-regular fa-user text-[8rem] text-amber-50"></i>
                 </div>
-                <Contacto lista={listaLinks} titulo={"Contacto"} />
-                <Contacto lista={listaInformacion} titulo={"Información"} />
+                {/* <div className='flex flex-row justify-center'>
+                    <Contacto lista={listaLinks} titulo={"Contacto"} />
+                    <Contacto lista={listaInformacion} titulo={"Información"} />
+                </div> */}
             </div>
-        </div>
-
+        </>
     );
 }

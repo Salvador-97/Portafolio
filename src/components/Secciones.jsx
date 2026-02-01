@@ -7,10 +7,9 @@ import clsx from 'clsx';
 export function Seccion({ Titulo }) {
     return (
         <div className={
-            clsx('w-[70%] sm:w-[50%] lg:w-[45%] rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem] mb-[1rem]',
-                'lg:text-[1.8rem] text-blanco py-[0.5rem]'
+            clsx('w-full sm:w-[50%] lg:w-[45%] gradienteTitulo rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem]',
+                'lg:text-[1.8rem] py-[0.5rem]'
             )}>
-            {/* <img src="Portafolio/bracket.png" alt="" className='w-[20%]'/>  */}
             <i className="fa-solid fa-chevron-left mr-[0.5rem]"></i>
             <span className='font-titulos'>{Titulo}</span>
             <i class="fa-solid fa-chevron-right ml-[0.5rem]"></i>
@@ -21,12 +20,14 @@ export function Seccion({ Titulo }) {
 export default function Secciones() {
     return (
         <>
-            <section className='w-[85%] mx-auto mt-[2rem]' id='acerca'>
-                {/* <Seccion Titulo="Salvador Gutierrez Olvera" /> */}
+            <section className={clsx(
+                "w-[85%] lg:min-h-dvh flex flex-col-reverse items-center mx-auto",
+                "mb-[2rem] pt-[4rem]"
+            )} id='acerca'>
                 <AcercaMi />
             </section>
             
-            <section className='w-[85%] mx-auto mb-[2rem]' id='habilidades'>
+            <section className='w-[85%] mx-auto' id='habilidades'>
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
             </section>

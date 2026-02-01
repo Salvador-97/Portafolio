@@ -4,9 +4,9 @@ import clsx from "clsx";
 
 export function ItemsNav({ nombre, href }) {
     return (
-        <li className="py-[0.2rem]">
-            <a href={href} 
-            className='no-underline p-3 text-blanco font-[700] hover:bg-letraTitulos transition-all duration-300 ease-in'>
+        <li className="px-[0.8rem] py-[0.5rem] rounded-[0.6rem] hover:bg-gradienteTitulo transition-all duration-300 ease-in">
+            <a href={href}
+                className='no-underline text-blanco font-[700]'>
                 {nombre}</a>
         </li>
     );
@@ -17,7 +17,8 @@ export default function Navbar() {
     return (
         <div className={
             clsx('w-[90%] relative mx-auto text-center',
-                'lg:flex lg:mt-[1rem] lg:justify-between lg:items-center'
+                'lg:flex lg:pt-[1rem] lg:justify-between lg:items-center',
+                'lg:absolute'
             )}>
             <div className={
                 clsx('text-center pt-[1rem]',
@@ -25,13 +26,11 @@ export default function Navbar() {
                 )}>
                 <div className={
                     clsx('text-blanco font-[700]',
-                        'hover:text-[#3462CF] cursor-pointer duration-700 transition-all ease-out transform scale-110',
+                        'cursor-pointer duration-700 transition-all ease-out transform scale-110',
                         'sm:text-[1.4rem]',
                         ''
                     )}>
-                    <i className="fa-solid fa-code pr-[0.5rem]"></i>
-                    Mi portafolio
-                    <i className="fa-solid fa-code pl-[0.5rem]"></i>
+                    <span className="gradienteTitulo">DevPortafolio</span>
                 </div>
                 <div className={
                     clsx('text-blanco text-[1.2rem] opacity-100',
@@ -40,7 +39,7 @@ export default function Navbar() {
                     <button className="lg:pointer-events-none" type="button"
                         onClick={() => setNav(!navAbierto)}>
                         <i className={
-                            clsx(`fa-solid fa-caret-down`,
+                            clsx(`fa-solid fa-caret-down gradienteTitulo`,
                                 navAbierto ? 'transform rotate-180' : 'transform rotate-0'
                             )}></i>
                     </button>
@@ -49,8 +48,8 @@ export default function Navbar() {
             <div name="links-nav"
                 className={clsx(
                     'absolute w-full transition-all duration-500',
-                    'lg:relative lg:opacity-100 lg:translate-y-0 lg:w-[38%] lg:pointer-events-auto lg:text-[1.2rem]',
-                    navAbierto && 'opacity-100 translate-y-0 bg-azultitulosfondo rounded-[0.5rem] z-10',
+                    'lg:relative lg:opacity-100 lg:translate-y-0 lg:w-[50%] lg:pointer-events-auto lg:text-[1.2rem]',
+                    navAbierto && 'opacity-100 translate-y-0 bg-gradienteTitulo rounded-[0.5rem] z-10',
                     !navAbierto && 'opacity-0 -translate-y-5 pointer-events-none',
                 )}>
                 <ul className='flex flex-col list-none lg:flex-row lg:justify-between'>
