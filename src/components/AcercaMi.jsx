@@ -7,12 +7,9 @@ import 'swiper/css';
 import 'swiper/css/pagination'
 import '../index.css'
 
-import { informacion, listaInformacion, listaLinks } from '../utils/informacionContacto';
+import { aboutMe, saludo, informacion } from '../utils/informacionContacto';
 import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
-import { Seccion } from './Secciones';
-import { copiar } from '../utils/copiarContenido';
 import clsx from 'clsx';
-import { Icon } from 'lucide-react';
 
 export function InformacionSlides({ titulo, lista, colorFondo, colorTitulo, icono }) {
     const [cambioTarjeta, setTarjeta] = useState(null);
@@ -141,39 +138,25 @@ export function foto() {
 }
 
 export default function AcercaMi() {
-    const aboutMe = (
-        <>
-            Desarrollo aplicaciones web <strong>full-stack</strong>,
-            desde la lógica de <span className="text-blue-500">backend</span> hasta interfaces
-            <strong>frontend</strong> funcionales,
-            enfocadas en claridad, <span className="text-green-500">mantenibilidad</span> y buen uso de datos.
-        </>
-    )
     return (
         <>
             <div className="w-full flex flex-col items-center">
-                <h3 className={clsx(
-                    "font-[700] text-letraTitulos text-center",
-                    "border-b-2 border-transparent rounded-[0.4rem]",
-                    "py-[0.5rem] mb-[0.5rem]"
-                )}> <Seccion Titulo="¡Hola mundo! Soy Salvador Gutiérrez Olvera" />
-                </h3>
-                <p className='text-blanco'>{aboutMe}</p>
-                <a href='Portafolio/CV.pdf' download className={clsx(
-                    'w-[60%] mt-4 border-rosaBoton border-2 text-rosaBoton p-2 rounded-[0.5rem]',
+                <h1 className={clsx(
+                    "font-[700] font-titulos text-[2.5rem] text-blanco text-center",
+                    "border-transparent rounded-[0.4rem] mt-[1rem]",
+                )}> {saludo}
+                </h1>
+                <h2 className='titulo text-rosaPalido font-[800] text-[1.2rem]'>Full-Stack Developer</h2>
+                <p className='text-blanco text-center mt-[0.5rem]'>{aboutMe}</p>
+                <a href='Portafolio/CV_Dev_Salvador_Gutiérrez_Olvera.pdf' download className={clsx(
+                    'max-w-[60%]  mt-4 border-rosaBoton border-2 text-rosaBoton p-2 rounded-[0.5rem]',
                     'flex justify-around'
                 )}>
                     <ArrowDownToLine />Descargar CV
                 </a>
             </div>
-            <div className='w-full'>
-                <div className='text-center'>
-                    <i class="fa-regular fa-user text-[8rem] text-amber-50"></i>
-                </div>
-                {/* <div className='flex flex-row justify-center'>
-                    <Contacto lista={listaLinks} titulo={"Contacto"} />
-                    <Contacto lista={listaInformacion} titulo={"Información"} />
-                </div> */}
+            <div className='w-full max-w-[25rem]'>
+                    <img src="Portafolio/Foto.png" className='rounded-[1.5rem] pb-[1rem]' alt="" />
             </div>
         </>
     );

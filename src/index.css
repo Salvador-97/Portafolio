@@ -31,6 +31,8 @@
   --color-titulos: #F5EEFF;
   --color-letraTitulos: #4B1D6E;
   --color-rosaBoton: #7117EA;
+  --color-rosaPalido: #fcbccb;
+  --color-moradoLetra: #c6a7fe;
   --background-image-gradienteTitulo: linear-gradient(to right, #7117EA, #EA6080);
 }
 
@@ -67,6 +69,14 @@ body {
   background-clip: text;
 
   /* 3. Hacemos que el color original del texto sea transparente */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradienteTituloAzul {
+  background: linear-gradient(to right, #6078EA, #fcbccb);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }

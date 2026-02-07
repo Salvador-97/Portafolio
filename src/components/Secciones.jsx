@@ -21,8 +21,8 @@ export default function Secciones() {
     return (
         <>
             <section className={clsx(
-                "w-[85%] lg:min-h-dvh flex flex-col-reverse items-center mx-auto",
-                "mb-[2rem] pt-[4rem]"
+                "w-[85%] lg:min-h-dvh flex flex-col-reverse md:grid md:grid-cols-[2fr_1fr] md:gap-[7rem] items-center mx-auto",
+                "mb-[2rem] pt-[1rem]"
             )} id='acerca'>
                 <AcercaMi />
             </section>

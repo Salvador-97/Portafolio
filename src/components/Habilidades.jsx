@@ -19,7 +19,6 @@ export function Habilidad({ lenguaje }) {
             )}
                 style={{
                     "--color-fondo": lenguaje.colorIcono,
-                    // backgroundImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0))"                    
                 }}
                 >
             <div className={clsx(
@@ -38,7 +37,6 @@ export function Habilidad({ lenguaje }) {
                     : "group-hover:bg-blanco"
                 )}
                     style={{"--color-hover": lenguaje.colorIcono}}
-                    //src={lenguaje.img} 
                     ></i>
             </div>
             <div className={
@@ -110,7 +108,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
         <div className="my-auto">
             <button className="cursor-pointer w-full" type="button" onClick={() => abrirNav(!navAbierto)}>
                 <h2 className={clsx(
-                    "bg-titulos text-letraTitulos mx-auto py-[0.5rem] rounded-[0.5rem]", 
+                    "bg-gradienteTitulo  text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]", 
                     "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem] my-[1rem]"
                 )}>
                     {titulo}
