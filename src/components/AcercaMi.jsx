@@ -142,21 +142,21 @@ export default function AcercaMi() {
         <>
             <div className="w-full flex flex-col items-center">
                 <h1 className={clsx(
-                    "font-[700] font-titulos text-[2.5rem] text-blanco text-center",
+                    "font-[700] font-titulos text-[1.6rem] lg:text-[2.5rem] text-blanco text-center",
                     "border-transparent rounded-[0.4rem] mt-[1rem]",
                 )}> {saludo}
                 </h1>
                 <h2 className='titulo text-rosaPalido font-[800] text-[1.2rem]'>Full-Stack Developer</h2>
-                <p className='text-blanco text-center mt-[0.5rem]'>{aboutMe}</p>
-                <a href='Portafolio/CV_Dev_Salvador_Gutiérrez_Olvera.pdf' download className={clsx(
-                    'max-w-[60%]  mt-4 border-rosaBoton border-2 text-rosaBoton p-2 rounded-[0.5rem]',
+                <p className='text-blanco text-center mt-[0.5rem] max-w-[40ch]'>{aboutMe}</p>
+                <a href='/Portafolio/CV_Dev_Salvador_Gutiérrez_Olvera.pdf' download className={clsx(
+                    'max-w-[60%] mt-4 border-rosaBoton border-2 text-rosaBoton p-2 rounded-[0.5rem]',
                     'flex justify-around'
                 )}>
                     <ArrowDownToLine />Descargar CV
                 </a>
             </div>
-            <div className='w-full max-w-[25rem]'>
-                    <img src="Portafolio/Foto.png" className='rounded-[1.5rem] pb-[1rem]' alt="" />
+            <div className='w-full max-w-[16rem] sm:max-w-[18rem] md:max-w-[22rem] lg:max-w-[25rem] h-[12rem] md:h-[15rem] lg:h-[25rem] overflow-hidden rounded-[1.5rem]'>
+                    <img src="/Portafolio/Foto.png" className='lg:h-full lg:w-full object-cover' alt="" />
             </div>
         </>
     );
