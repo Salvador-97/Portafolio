@@ -67,38 +67,3 @@ export const informacion = {
         enlace: true
     }
 }
-
-
-export const listaEstudios = ['bachillerato', 'universidad'];
-
-export const estudios = {
-    universidad: {
-        nombre: 'Facultad de Ingenieria, UNAM',
-        carrera: 'Ingenieria en Computación (Incompleta)',
-        generacion: 'Agosto 2015 -- Mayo 2019',
-        ubicacion: 'Coyoacán, CDMX'
-    },
-    bachillerato: {
-        nombre: ' CCH Vallejo, UNAM',
-        carrera: 'Bachillerato',
-        generacion: 'Agosto 2012 -- Junio 2015',
-        ubicacion: ' Gustavo A. Madero, CDMX'
-    }
-}
-
-export const listaTrabajos = ['selectshop', 'prova'];
-
-export const trabajos = {
-    prova: {
-        nombre: 'Procesos de Valor Agregado',
-        puesto: 'Almacenista/Embarques',
-        estancia: 'Marzo 2025 -- Septiembre 2025',
-        ubicacion: 'Tepotzotlán, Méx.'
-    },
-    selectshop: {
-        nombre: 'Comercializadora de Marcas JSB',
-        puesto: 'Ayudante General',
-        estancia: 'Junio 2024 -- Enero 2025',
-        ubicacion: 'Tepotzotlán, Méx.'
-    }
-}

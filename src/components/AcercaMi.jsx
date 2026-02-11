@@ -8,79 +8,7 @@ import 'swiper/css/pagination'
 import '../index.css'
 
 import { aboutMe, saludo, informacion } from '../utils/informacionContacto';
-import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
 import clsx from 'clsx';
-
-export function InformacionSlides({ titulo, lista, colorFondo, colorTitulo, icono }) {
-    const [cambioTarjeta, setTarjeta] = useState(null);
-    return (
-        <>
-            <div className={clsx(
-                "text-[1rem] text-letraTitulos font-[700] w-full text-center py-[0.5rem] rounded-[0.5rem]",
-                colorTitulo
-            )}>
-                {titulo}
-            </div>
-            <div className='w-full text-blanco'>
-                {lista.map((valor) => (
-                    <div key={valor} onClick={() => setTarjeta(valor === cambioTarjeta ? null : valor)}
-                        className={clsx(
-                            "w-full flex flex-col text-center py-[0.5rem] justify-between"
-                        )}>
-                        <div className='font-[600] py-[0.5rem] rounded-[0.5rem]'>
-                            {estudios[valor]?.nombre || trabajos[valor]?.nombre} <br />
-                            {estudios[valor]?.carrera || trabajos[valor]?.puesto} <br />
-                            {estudios[valor]?.generacion || trabajos[valor]?.estancia} <br />
-                            {estudios[valor]?.ubicacion || trabajos[valor]?.ubicacion}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </>
-    );
-}
-
-
-export function Carousel() {
-    return (
-        <div className='sm:col-span-2 w-full mx-auto'>
-            <Swiper
-                modules={[Pagination, Autoplay]}
-                pagination={{ el: '.custom-pagination', clickable: true }}
-                spaceBetween={20}
-                slidesPerView={1}
-                loop={true}
-                speed={800}
-                className='m-auto rounded-b-[1rem] md:w-full'
-            >
-                <SwiperSlide className='flex-col text-center text-letraTitulos'>
-                    <div className={clsx(
-                        "w-full rounded-[0.5rem] font-[700] py-[0.5rem] mb-[0.5rem]",
-                        "bg-titulos"
-                    )}>
-                        Sobre mi...
-                    </div>
-                    <div className='rounded-[0.5rem] text-center'>
-                        <p className='w-[90%] mx-auto my-[1rem] text-titulos'>{aboutMe}</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className='flex-col'>
-                    <InformacionSlides titulo='Estudios' lista={listaEstudios}
-                        colorTitulo='bg-titulos'
-                        icono='fa-solid fa-laptop-code'
-                    />
-                </SwiperSlide>
-                <SwiperSlide className='flex-col'>
-                    <InformacionSlides titulo='Trabajos' lista={listaTrabajos}
-                        colorTitulo='bg-titulos'
-                        icono='fa-solid fa-briefcase'
-                    />
-                </SwiperSlide>
-            </Swiper>
-            <div className="custom-pagination mb-[0.5rem] text-center"></div>
-        </div>
-    );
-}
 
 export function Enlace({ info }) {
     const Icon = informacion[info].icono;
@@ -127,14 +55,6 @@ export function Contacto({ lista }) {
             ))}
         </ul>
     );
-}
-
-export function foto() {
-    return (
-        <>
-
-        </>
-    )
 }
 
 export default function AcercaMi() {

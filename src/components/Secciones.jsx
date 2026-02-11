@@ -2,6 +2,7 @@ import '../index.css'
 import Habilidades from './Habilidades.jsx';
 import Proyectos from './Proyectos.jsx';
 import AcercaMi from './AcercaMi.jsx';
+import Formacion from './Formacion.jsx';
 import clsx from 'clsx';
 
 export function Seccion({ Titulo }) {
@@ -26,7 +27,10 @@ export default function Secciones() {
             )} id='acerca'>
                 <AcercaMi />
             </section>
-            
+            <section className='w-[85%] mx-auto h-[100dvh]' id='formacion'>
+                <Seccion Titulo="Formación"/>
+                <Formacion />
+            </section>
             <section className='w-[85%] mx-auto' id='habilidades'>
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
