@@ -28,12 +28,15 @@
   --color-rojotrabajosfondo: #851752;
   --color-azultitulosfondo: #252D47;
   --color-rosa: #EE6DA7;
+  --color-rosaIcono: #D45C95;
   --color-titulos: #F5EEFF;
   --color-letraTitulos: #4B1D6E;
   --color-rosaBoton: #7117EA;
   --color-rosaPalido: #fcbccb;
   --color-moradoLetra: #c6a7fe;
   --background-image-gradienteTitulo: linear-gradient(to right, #7117EA, #EA6080);
+  --background-image-gradienteBarra: linear-gradient(to right, #662D8C, #ED1E79);
+  --background-image-gradienteBoton: linear-gradient(to right, #FF61D2, #FE9090)
 }
 
 :root {

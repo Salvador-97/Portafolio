@@ -150,7 +150,43 @@ export const listaProyectos = {
     hospital: hospital
 }
 
-export const proyectos = ['contenedores', 'portafolio', 'series', 'marbetes', 'hospital']
+export const proyectos = [
+    {
+        id: 'inbound',
+        icono: 'fa-solid fa-truck-ramp-box',
+        nombre: 'Sistema de control y registro de contenedores',
+        descripcion: 'Aplicación web para gestionar contenedores y productos en un almacén, con seguimiento de tarimas y ubicación.',
+        link: 'https://inbound-manager-web.onrender.com',
+        desarrollo: false,
+        estado: true,
+        progreso: 1,
+        // lenguajes: ['bootstrap', 'javascript', 'sass', 'python', 'flask', 'sql']
+    },
+    {
+        id: 'portafolio',
+        icono: 'fa-solid fa-address-card',
+        nombre: 'Portafolio Web',
+        descripcion: 'Sitio web diseñado para presentar mis proyectos, habilidades y experiencia laboral.',
+        link: 'https://github.com/Salvador-97/Portafolio',
+        desarrollo: true,
+        estado: true,
+        progreso: 1,
+        // lenguajes: ['javascript', 'react', 'tailwind']
+    },
+    {
+        id: 'series',
+        icono: 'fa-solid fa-circle-play',
+        nombre: 'Plataforma de series web',
+        descripcion: 'Sitio web para explorar y ver series, con información detallada de temporadas y capítulos.',
+        link: 'https://rari-caturas-tv.onrender.com/',
+        desarrollo: true,
+        estado: true,
+        progreso: 0.9,
+        // lenguajes: ['javascript', 'mongoDB', 'node', 'axios']
+    }
+]
+
+// export const proyectos = ['contenedores', 'portafolio', 'series']
 
 export const lenguajesContenedores = ['html', 'css', 'bootstrap', 'javascript', 'python', 'sql'];
 export const lenguajesMarbetes = ['python', 'cvs', 'excel'];
