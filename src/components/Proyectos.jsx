@@ -1,8 +1,7 @@
-import { proyectos, estado } from "../utils/informacionProyectos";
+import { proyectos, estado, lenguajes } from "../utils/informacionProyectos";
 import clsx from 'clsx';
 
 export function Tarjeta({ informacion }) {
-    console.log("Proyecto: ", informacion)
     return (
         <div className="relative">
             <div className={clsx(
@@ -21,23 +20,33 @@ export function Tarjeta({ informacion }) {
                         )}></i>
                     </div>
                     <div className='flex flex-col justify-center ml-[1rem]'>
-                        <span className='text-blanco font-bold'>Sistema WMS</span>
-                        <span className='text-gray-100'>2 semanas</span>
+                        <span className='text-blanco font-bold'>{informacion.categoria}</span>
+                        <span className='text-gray-100'>{informacion.tiempo}</span>
                     </div>
 
                 </div>
                 <div className='m-[1.5rem]'>
-                    <h1 className='text-blanco text-[1.2rem] font-bold '>Inbound Manager Web</h1>
+                    <h1 className='text-blanco text-[1.2rem] font-bold '>{informacion.nombre}</h1>
                     <div className='flex mt-[0.5rem]'>
-                        <img className='w-8 mr-[0.3rem]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" />
-                        <img className='w-8 mr-[0.3rem]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" />
+                        {informacion.lenguajes.map(lenguaje => {
+                            const tecnologia = lenguajes[lenguaje];
 
-                        <img className='w-8 mr-[0.3rem]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="" />
-
-                        <img className='w-8 mr-[0.3rem]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" />
-
-                        <img className='w-8 mr-[0.3rem]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" />
-
+                            return !tecnologia.img
+                                ? (
+                                    <i
+                                        key={tecnologia.id}
+                                        className={`${tecnologia.icono} mr-[0.5rem] text-[2rem]`}
+                                        style={{ color: tecnologia.colorIcono }}>
+                                    </i>
+                                )
+                                : (
+                                    <img
+                                        key={tecnologia.id}
+                                        className='w-8 mr-[0.5rem]'
+                                        src={tecnologia.img}
+                                        alt={tecnologia.id} />
+                                )
+                        })}
                     </div>
                 </div>
                 <div className='mx-[1.5rem] mb-[1.5rem] flex justify-between'>
@@ -51,22 +60,29 @@ export function Tarjeta({ informacion }) {
                         </span>
                         <div>
                             <i className='fa-solid fa-circle mr-[0.5rem]'
-                                style={{ color: estado(informacion.estado, '#63E6BE', '#E84646') }}>
+                                style={{ color: estado(informacion.online, '#63E6BE', '#E84646') }}>
                             </i>
-                            {estado(informacion.estado, 'Online', 'Offline')}
+                            {estado(informacion.online, 'Online', 'Offline')}
                         </div>
                     </div>
                     <div className='w-[50%] flex flex-col items-center justify-between'>
-                        <a href="/Proyecto"
+                        <a
+                            href={informacion.demo}
+                            target="_blank"
                             className={clsx(
-                                'w-full rounded-[1rem] border border-rosa transition-all duration-300 hover:bg-rosa  text-blanco text-center p-[0.4rem] font-bold z-10'
+                                'w-full rounded-[1rem] border border-rosa transition-all duration-300',
+                                'hover:bg-rosa  text-blanco text-center p-[0.4rem] font-bold z-10'
                             )}>
                             Demo
                             <i className="fa-solid fa-arrow-up-right-from-square ml-[0.5rem]"></i>
                         </a>
-                        <a href="#" className={clsx(
-                            'w-full flex items-center justify-around rounded-[1rem] border border-rosa transition-all duration-300  hover:bg-rosa text-blanco text-center p-[0.4rem] font-bold z-10'
-                        )}>
+                        <a
+                            href={informacion.github}
+                            target="_blank"
+                            className={clsx(
+                                'w-full flex items-center justify-around rounded-[1rem] border border-rosa',
+                                'transition-all duration-300  hover:bg-rosa text-blanco text-center p-[0.4rem] font-bold z-10'
+                            )}>
                             <i className="fa-brands fa-github"></i>
                             GitHub
                             <i className="fa-solid fa-angle-right"></i>
@@ -97,7 +113,7 @@ export function Tarjeta({ informacion }) {
 
 export default function Proyectos() {
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[3rem] mx-auto w-[90%]'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[3rem]'>
             {proyectos.map(proyecto => (
                 <Tarjeta informacion={proyecto} lenguajesProyecto={proyecto.lenguajes} />
             ))}

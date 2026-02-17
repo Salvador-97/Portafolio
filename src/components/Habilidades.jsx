@@ -142,7 +142,7 @@ export default function Habilidades() {
             <div className="flex flex-col text-center relative overflow-hidden">
                 <Subseccion titulo="Front-End" lista={listaFront} lenguaje={true} />
                 <Subseccion titulo="Back-End" lista={listaBack} lenguaje={true} />
-                <Subseccion titulo="Soft Skills" lista={listaSkills} lenguaje={false} />
+                {/* <Subseccion titulo="Soft Skills" lista={listaSkills} lenguaje={false} /> */}
             </div>
         </>
     );

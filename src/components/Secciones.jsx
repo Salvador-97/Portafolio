@@ -8,7 +8,7 @@ import clsx from 'clsx';
 export function Seccion({ Titulo }) {
     return (
         <div className={
-            clsx('w-full sm:w-[50%] lg:w-[45%] gradienteTitulo rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem]',
+            clsx('w-full sm:w-[50%] lg:w-[45%] gradienteTitulo rounded-[0.5rem] mx-auto my-[1rem] text-center font-[700] text-[1.2rem]',
                 'lg:text-[1.8rem] py-[0.5rem]'
             )}>
             <i className="fa-solid fa-chevron-left mr-[0.5rem]"></i>
@@ -27,15 +27,15 @@ export default function Secciones() {
             )} id='acerca'>
                 <AcercaMi />
             </section>
-            <section className='w-[85%] mx-auto h-[100dvh]' id='formacion'>
+            {/* <section className='w-[85%] mx-auto h-[100dvh]' id='formacion'>
                 <Seccion Titulo="Formación"/>
                 <Formacion />
-            </section>
+            </section> */}
             <section className='w-[85%] mx-auto' id='habilidades'>
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
             </section>
-            <section className='w-full mx-auto' id='proyectos'>
+            <section className='w-[85%] mx-auto min-h-[100dvh] flex flex-col justify-center' id='proyectos'>
                 <Seccion Titulo="Proyectos"/>
                 <Proyectos />
             </section>
