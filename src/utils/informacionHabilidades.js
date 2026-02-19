@@ -98,9 +98,9 @@ const tailwindJSON = {
 }
 
 const flaskJSON = {
-    icono: 'devicon-flask-original-wordmark',
+    icono: 'devicon-flask-original',
     img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg',
-    colorIcono: '#000',
+    colorIcono: '#3A506B',
     conocimiento: {
         item1: 'Definición de rutas y controladores',
         item2: 'Renderizado de vistas con plantillas',
