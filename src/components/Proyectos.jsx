@@ -6,17 +6,17 @@ export function Tarjeta({ informacion }) {
         <div className="relative">
             <div className={clsx(
                 "rounded-[1.5rem] border border-blanco",
-                "flex flex-col group",
+                "flex flex-col group h-full justify-center",
                 "bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl",
                 "shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             )}>
                 <div className='flex mx-[1.5rem] mt-[1rem]'>
                     <div className={clsx(
-                        'border-2 border-white/10 transition-all duration-300 group-hover:border-white/40 w-16 h-16 rounded-full flex justify-center items-center text-center'
+                        'border-2 border-white/10 transition-all duration-300 group-hover:border-white/40 aspect-square rounded-full flex justify-center items-center text-center'
                     )}>
                         <i className={clsx(
                             `${informacion.icono}`,
-                            "text-[2rem] text-white/40 transition-all duration-300 group-hover:text-white/70"
+                            "text-[2rem] p-[0.8rem] text-white/40 transition-all duration-300 group-hover:text-white/70"
                         )}></i>
                     </div>
                     <div className='flex flex-col justify-center ml-[1rem]'>
@@ -26,8 +26,8 @@ export function Tarjeta({ informacion }) {
 
                 </div>
                 <div className='m-[1.5rem]'>
-                    <h1 className='text-blanco text-[1.2rem] font-bold '>{informacion.nombre}</h1>
-                    <div className='flex mt-[0.5rem]'>
+                    <h1 className='text-blanco text-[1.2rem] font-bold mb-2'>{informacion.nombre}</h1>
+                    <div className='flex flex-wrap gap-2'>
                         {informacion.lenguajes.map(lenguaje => {
                             const tecnologia = lenguajes[lenguaje];
 
@@ -35,14 +35,14 @@ export function Tarjeta({ informacion }) {
                                 ? (
                                     <i
                                         key={tecnologia.id}
-                                        className={`${tecnologia.icono} mr-[0.5rem] text-[2rem]`}
+                                        className={`${tecnologia.icono} text-[2rem]`}
                                         style={{ color: tecnologia.colorIcono }}>
                                     </i>
                                 )
                                 : (
                                     <img
                                         key={tecnologia.id}
-                                        className='w-8 mr-[0.5rem]'
+                                        className='w-8'
                                         src={tecnologia.img}
                                         alt={tecnologia.id} />
                                 )
@@ -90,22 +90,6 @@ export function Tarjeta({ informacion }) {
                     </div>
                 </div>
                 <a href="#" className="absolute inset-0"></a>
-
-                {/* <div className='relative flex justify-center'>
-                    <div className={
-                        clsx(
-                            "text-[#fff] text-[0.9rem] text-center m-[1rem] flex flex-col items-center justify-center",
-                            "transition-all duration-800 absolute",
-                            masInfo ? 'translate-y-[160%]' : 'opacity-100'
-                        )}>
-                        <div className="font-[700] h-[3.5rem] pb-[1rem]">{informacion.nombre}</div>
-                        <div className="font-[700]">Tecnologias</div>
-                        <div className="py-[0.5rem] flex justify-center">
-                            {lenguajesProyecto.map((lenguaje, index) => (
-                                !lenguajes[lenguaje].img
-                                    ? <i key={index} className={`${lenguajes[lenguaje].icono} pr-[0.5rem] text-[1.2rem]`}
-                                        style={{ color: lenguajes[lenguaje].colorIcono }}></i>
-                                    : <img alt='icono' src={lenguajes[lenguaje].img} className="w-[13%] pr-[0.5rem]" />*/}
             </div>
         </div>
     );
