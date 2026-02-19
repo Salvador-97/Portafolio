@@ -50,7 +50,7 @@ export function Tarjeta({ informacion }) {
                     </div>
                 </div>
                 <div className='mx-[1.5rem] mb-[1.5rem] flex justify-between'>
-                    <div className='text-blanco w-[45%]'>
+                    <div className='text-blanco w-[45%] flex flex-col'>
                         <span>Progreso</span>
                         <div className="h-[0.8rem] bg-gradienteBarra rounded-full overflow-hidden my-[0.5rem]"
                             style={{ width: `${informacion.progreso * 100}%` }}>
