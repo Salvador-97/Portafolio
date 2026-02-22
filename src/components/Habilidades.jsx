@@ -1,19 +1,15 @@
 import { useState } from "react";
-import { lenguajes, listaFront, listaBack, listaSkills, skills } from "../utils/informacionHabilidades";
+import { lenguajes, skills } from "../utils/informacionHabilidades";
 import clsx from "clsx";
 
 export function Habilidad({ lenguaje }) {
-    let versionMobile;
-    if (window.innerWidth < 1024) {
-        versionMobile = true;
-    } else {
-        versionMobile = false;
-    }
+    const Icono = lenguaje.icon;
+    console.log(Icono)
     return (
         <div className={
             clsx(
-                "w-[100%] p-4 justify-center items-center flex flex-col rounded-[1rem]",
-                " transition-all duration-300 ease-in",
+                "w-full h-full p-4 justify-center items-center flex flex-col rounded-[1rem]",
+                "transition-all duration-300 ease-in",
                 "group border-3 border-transparent bg-white/5",
                 "hover:bg-transparent hover:border-[var(--color-fondo)]"
             )}
@@ -24,19 +20,14 @@ export function Habilidad({ lenguaje }) {
             <div className="rounded-[0.9rem] w-full">
 
                 <div className={clsx(
-                    "justify-between"
+                    "justify-between text-center group"
                 )}>
-                    <i className={clsx(
-                        "text-[4rem] text-[#fff] mx-auto p-[0.5rem] rounded-[0.5rem]",
-                        "group-hover:text-[var(--color-hover)] transition-all duration-300 ease-in",
-                        `${lenguaje.icono}`
-                    )}
-                        style={{ "--color-hover": lenguaje.colorIcono }}
-                    ></i>
+                    <Icono className="w-12 text-white transition-colors duration-300"
+                        style={{ color: lenguaje.color }} />
                 </div>
                 <div className={
                     clsx(
-                        "flex items-center py-[0.5rem] h-[8rem] justify-center"
+                        "flex items-center py-[0.5rem] justify-center"
                     )}>
                     <ul className={
                         clsx("text-blanco text-left text-[0.75rem] w-[90%]",
@@ -116,7 +107,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                     ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible mt-[4rem] lg:mt-[2rem]'
                     : 'opacity-0 scale-90 max-h-0',
                 lenguaje
-                    ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-[2rem]'
+                    ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[2rem]'
                     : 'grid-cols-2 md:grid-cols-5 w-[85%] gap-[1rem] mx-auto mt-[1rem]'
             )}>
                 {lista.map(item => (
@@ -134,7 +125,7 @@ export default function Habilidades() {
         <>
             <div className="flex flex-col text-center relative overflow-hidden">
                 <Subseccion titulo="Front-End" lista={listaFront} lenguaje={true} />
-                <Subseccion titulo="Back-End" lista={listaBack} lenguaje={true} />
+                {/* <Subseccion titulo="Back-End" lista={listaBack} lenguaje={true} /> */}
                 {/* <Subseccion titulo="Soft Skills" lista={listaSkills} lenguaje={false} /> */}
             </div>
         </>
