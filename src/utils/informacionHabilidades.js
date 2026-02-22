@@ -1,138 +1,163 @@
-export const listaFront = ['html', 'css', 'javascript', 'react', 'tailwind']
-export const listaBack = ['python', 'sql', 'node', 'flask', 'mongo']
+import htmlIcon from "../assets/icons/html5.svg?react"
+import bootstrapIcon from "../assets/icons/bootstrap.svg?react"
+import cssIcon from "../assets/icons/css3.svg?react"
+import javascriptIcon from "../assets/icons/javascript.svg?react"
+import sassIcon from "../assets/icons/sass.svg?react"
+import reactIcon from "../assets/icons/react.svg?react"
+import tailwindcssIcon from "../assets/icons/tailwindcss.svg?react"
+import pythonIcon from "../assets/icons/python.svg?react"
+import nodejsIcon from "../assets/icons/nodejs.svg?react"
+import databaseIcon from "../assets/icons/database.svg?react"
+import flaskIcon from "../assets/icons/flask.svg?react"
+import mongodbIcon from "../assets/icons/mongodb.svg?react"
 
-const htmlJSON = {
-    icono: 'devicon-html5-plain',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
-    colorIcono: '#E34F26',
-    conocimiento: {
-        item1: 'Estructura semántica de páginas web',
-        item2: 'Formularios accesibles con validaciones básicas',
-        item3: 'Uso correcto de tablas, listas y contenido multimedia',
-        item4: 'Integración con CSS y JavaScript'
-    }
-}
-
-const cssJSON = {
-    icono: 'fa-brands fa-css',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
-    colorIcono: '#1572B6',
-    conocimiento: {
-        item1: 'Estilizado y maquetación de interfaces web',
-        item2: 'Diseño responsivo con media queries',
-        item3: 'Flexbox y Grid para layouts',
-        item4: 'Animaciones y transiciones simples'
-    }
-}
-
-const javascriptJSON = {
-    icono: 'fab fa-js',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
-    colorIcono: '#F7DF1E',
-    conocimiento: {
-        item1: 'Manipulación del DOM',
-        item2: 'Manejo de eventos y validación de formularios',
-        item3: 'Consumo de APIs REST con fetch / axios',
-        item4: 'Manejo de datos dinámicos'
-    }
-}
-
-const pythonJSON = {
-    icono: 'fa-brands fa-python',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
-    colorIcono: '#3776AB',
-    conocimiento: {
-        item1: 'Automatización de procesos',
-        item2: 'UI con Tkinter/CustomTkinter',
-        item3: 'Conexión y manejo de bases de datos SQLite',
-        item4: 'Desarrollo de backend web con Flask'
-    }
-}
-
-const sqlJSON = {
-    icono: 'fa-solid fa-database',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg',
-    colorIcono: '#828282',
-    conocimiento: {
-        item1: 'Consultas SELECT, INSERT, UPDATE, DELETE',
-        item2: 'Diseño de tablas y relaciones simples',
-        item3: 'Integración con aplicaciones backend',
-        item4: 'Manejo de datos para aplicaciones web'
-    }
-}
-
-const reactJSON = {
-    icono: 'fa-brands fa-react',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-    colorIcono: '#61DAFB',
-    conocimiento: {
-        item1: 'Desarrollo de interfaces basadas en componentes',
-        item2: 'Componentes reutilizables',
-        item3: 'Renderizado condiciona',
-        item4: 'Integración con APIs REST y control de flujo de datos',
-    }
-}
-
-const nodeJSON = {
-    icono: 'fa-brands fa-node-js',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain-wordmark.svg',
-    colorIcono: '#339933',
-    conocimiento: {
-        item1: 'Creación de servidores con Express',
-        item2: 'Desarrollo de APIs REST básicas',
-        item3: 'Manejo de rutas y middlewares',
-        item4: 'Procesamiento de peticiones HTTP'
-    }
-}
-
-const tailwindJSON = {
-    icono: 'devicon-tailwindcss-original',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
-    colorIcono: '#38bdf8',
-    conocimiento: {
-        item1: 'Estilizado mediante utility-first CSS',
-        item2: 'Diseño responsivo con clases utilitarias',
-        item3: 'Creación de interfaces consistentes',
-        item4: 'Integración con proyectos React'
-    }
-}
-
-const flaskJSON = {
-    icono: 'devicon-flask-original',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg',
-    colorIcono: '#3A506B',
-    conocimiento: {
-        item1: 'Definición de rutas y controladores',
-        item2: 'Renderizado de vistas con plantillas',
-        item3: 'Manejo de formularios',
-        item4: 'Conexión con bases de datos'
-    }
-}
-
-const mongoJSON = {
-    icono: 'devicon-mongodb-plain',
-    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg',
-    colorIcono: '#4faa41',
-    conocimiento: {
-        item1: 'Modelado de datos orientado a documentos',
-        item2: 'Integración con Node.js',
-        item3: 'Manejo de colecciones y documentos',
-        item4: 'Uso de MongoDB en proyectos web'
-    }
-}
-
-export const lenguajes = {
-    html: htmlJSON,
-    css: cssJSON,
-    javascript: javascriptJSON,
-    python: pythonJSON,
-    sql: sqlJSON,
-    react: reactJSON,
-    node: nodeJSON,
-    tailwind: tailwindJSON,
-    flask: flaskJSON,
-    mongo: mongoJSON
-}
+export const habilidades = [
+    {
+        id: 'HTML',
+        icon: htmlIcon,
+        colorIcono: '#E34F26',
+        conocimiento: [
+            'Estructura semántica de páginas web',
+            'Formularios accesibles con validaciones básicas',
+            'Uso correcto de tablas, listas y contenido multimedia',
+            'Integración con CSS y JavaScript'
+        ],
+        categoria: 'Front'
+    },
+    {
+        id: 'CSS',
+        icon: cssIcon,
+        colorIcono: '#1572B6',
+        conocimiento: [
+            'Estilizado y maquetación de interfaces web',
+            'Diseño responsivo con media queries',
+            'Flexbox y Grid para layouts',
+            'Animaciones y transiciones simples'
+        ],
+        categoria: 'Front'
+    },
+    {
+        id: 'Javascript',
+        icon: javascriptIcon,
+        colorIcono: '#F7DF1E',
+        conocimiento: [
+            'Manipulación del DOM',
+            'Manejo de eventos y validación de formularios',
+            'Consumo de APIs REST con fetch / axios',
+            'Manejo de datos dinámicos'
+        ],
+        categoria: 'Front'
+    },
+    {
+        id: 'Bootstrap',
+        icon: bootstrapIcon,
+        colorIcono: '#7952B3',
+        conocimiento: [
+            'Grid system responsivo',
+            'Componentes de formulario y botones',
+            'Utilidades de espaciado y alineación',
+            'Implementación de modales'
+        ],
+        categoria: 'Front'
+    },
+    {
+        id: 'Python',
+        icon: pythonIcon,
+        colorIcono: '#306998',
+        colorSecundario: '#FFD845',
+        conocimiento: [
+            'Automatización de procesos',
+            'UI con Tkinter/CustomTkinter',
+            'Conexión y manejo de bases de datos SQLite',
+            'Desarrollo de backend web con Flask'
+        ],
+        categoria: 'Back'
+    },
+    {
+        id: 'Base de Datos',
+        icon: databaseIcon,
+        colorIcono: '#374151',
+        conocimiento: [
+            'Consultas SELECT, INSERT, UPDATE, DELETE',
+            'Diseño de tablas y relaciones simples',
+            'Integración con aplicaciones backend',
+            'Manejo de datos para aplicaciones web'
+        ],
+        categoria: 'Back'
+    },
+    {
+        id: 'React',
+        icon: reactIcon,
+        colorIcono: '#61DAFB',
+        conocimiento: [
+            'Desarrollo de interfaces basadas en componentes',
+            'Componentes reutilizables',
+            'Renderizado condicional',
+            'Integración con APIs REST y control de flujo de datos',
+        ],
+        categoria: 'Front'
+    },
+    {
+        id: 'Node.js',
+        icon: nodejsIcon,
+        colorIcono: '#339933',
+        conocimiento: [
+            'Creación de servidores con Express',
+            'Desarrollo de APIs REST básicas',
+            'Manejo de rutas y middlewares',
+            'Procesamiento de peticiones HTTP'
+        ],
+        categoria: 'Back'
+    },
+    {
+        id: 'Tailwind',
+        icon: tailwindcssIcon,
+        colorIcono: '#06B6D4',
+        conocimiento: [
+            'Estilizado mediante utility-first CSS',
+            'Diseño responsivo con clases utilitarias',
+            'Creación de interfaces consistentes',
+            'Integración con proyectos React'
+        ],
+        categoria: 'Front'
+    },
+    {
+        id: 'Flask',
+        icon: flaskIcon,
+        colorIcono: '#FFF',
+        conocimiento: [
+            'Definición de rutas y controladores',
+            'Renderizado de vistas con plantillas',
+            'Manejo de formularios',
+            'Conexión con bases de datos'
+        ],
+        categoria: 'Back'
+    },
+    {
+        id: 'MongoDB',
+        icon: mongodbIcon,
+        colorIcono: '#47A248',
+        conocimiento: [
+            'Modelado de datos orientado a documentos',
+            'Integración con Node.js',
+            'Manejo de colecciones y documentos',
+            'Uso de MongoDB en proyectos web'
+        ],
+        categoria: 'Back'
+    },
+    {
+        id: 'Sass',
+        icon: sassIcon,
+        colorIcono: '#CC6699',
+        conocimiento: [
+            'Variables y modularización con @use',
+            'Nesting y pseudo-selectores',
+            'Media queries responsivas',
+            'Estructuración y mantenimiento de CSS escalable'
+        ],
+        categoria: 'Front'
+    },
+]
 
 export const listaSkills = ['disciplina', 'resultados', 'organizacion', 'aprendizaje', 'equipo'];
 
