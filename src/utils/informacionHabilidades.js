@@ -112,6 +112,18 @@ export const habilidades = [
         categoria: 'Back'
     },
     {
+        id: 'Sass',
+        icon: sassIcon,
+        colorIcono: '#CC6699',
+        conocimiento: [
+            'Variables y modularización con @use',
+            'Nesting y pseudo-selectores',
+            'Media queries responsivas',
+            'Estructuración y mantenimiento de CSS escalable'
+        ],
+        categoria: 'Front'
+    },
+    {
         id: 'Tailwind',
         icon: tailwindcssIcon,
         colorIcono: '#06B6D4',
@@ -146,19 +158,7 @@ export const habilidades = [
             'Uso de MongoDB en proyectos web'
         ],
         categoria: 'Back'
-    },
-    {
-        id: 'Sass',
-        icon: sassIcon,
-        colorIcono: '#CC6699',
-        conocimiento: [
-            'Variables y modularización con @use',
-            'Nesting y pseudo-selectores',
-            'Media queries responsivas',
-            'Estructuración y mantenimiento de CSS escalable'
-        ],
-        categoria: 'Front'
-    },
+    }
 ]
 
 export const listaSkills = ['disciplina', 'resultados', 'organizacion', 'aprendizaje', 'equipo'];

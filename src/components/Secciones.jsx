@@ -13,7 +13,7 @@ export function Seccion({ Titulo }) {
             )}>
             <i className="fa-solid fa-chevron-left mr-[0.5rem]"></i>
             <span className='font-titulos'>{Titulo}</span>
-            <i class="fa-solid fa-chevron-right ml-[0.5rem]"></i>
+            <i className="fa-solid fa-chevron-right ml-[0.5rem]"></i>
         </div>
     );
 }

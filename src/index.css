@@ -11,6 +11,7 @@
 
 @theme {
   --font-titulos: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --breakpoint-xlg: 1224px;
   --color-morado: #DD8FFA;
   --color-blanco: #F3F4F6;
   --color-gris: #D6D6D6;

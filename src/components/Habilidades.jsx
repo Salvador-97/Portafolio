@@ -4,8 +4,6 @@ import clsx from "clsx";
 
 export function Habilidad({ lenguaje }) {
     const Icono = lenguaje.icon;
-    console.log("Nombre: ", lenguaje.id)
-    console.log('Secundario: ', lenguaje.colorSecundario)
     return (
         <div className={
             clsx(
@@ -26,7 +24,7 @@ export function Habilidad({ lenguaje }) {
                 <Icono className={clsx(
                     "w-[4rem] mx-auto transition-all duration-300",
                     "[--bg-primaryColor:var(--hover-primario)] [--bg-secondaryColor:var(--hover-secundario)]",
-                    "md:[--bg-primaryColor:#c1bcc6] md:[--bg-secondaryColor:#fff]",
+                    "lg:[--bg-primaryColor:#c1bcc6] lg:[--bg-secondaryColor:#fff]",
                     "group-hover:[--bg-primaryColor:var(--hover-primario)]",
                     "group-hover:[--bg-secondaryColor:var(--hover-secundario)]"
                 )}
@@ -41,7 +39,11 @@ export function Habilidad({ lenguaje }) {
                         "font-[700]"
                     )}>
                     {Object.values(lenguaje.conocimiento).map((item, index) => (
-                        <li key={index}><i className="fa-solid fa-caret-right mr-[0.5rem] text-[#5FF0B9]"></i>{item}</li>
+                        <li key={index}>
+                            <i className="fa-solid fa-caret-right mr-[0.5rem] text-[#5FF0B9]">
+                            </i>
+                            {item}
+                        </li>
                     ))}
                 </ul>
             </div>
@@ -109,7 +111,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                 "grid overflow-hidden",
                 "top-full origin-top ",
                 `transition-all duration-500 ease-in-out transform`,
-                'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[2rem]',
+                'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2rem]',
                 navAbierto
                     ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible my-[1rem] lg:mt-[2rem]'
                     : 'opacity-0 scale-90 max-h-0',

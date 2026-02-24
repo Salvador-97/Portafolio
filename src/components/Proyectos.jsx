@@ -99,7 +99,7 @@ export default function Proyectos() {
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[3rem]'>
             {proyectos.map(proyecto => (
-                <Tarjeta informacion={proyecto} lenguajesProyecto={proyecto.lenguajes} />
+                <Tarjeta key={proyecto.id} informacion={proyecto} lenguajesProyecto={proyecto.lenguajes} />
             ))}
         </div>
     );
