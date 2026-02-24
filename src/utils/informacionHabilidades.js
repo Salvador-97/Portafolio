@@ -16,6 +16,7 @@ export const habilidades = [
         id: 'HTML',
         icon: htmlIcon,
         colorIcono: '#E34F26',
+        colorSecundario: '#FFF',
         conocimiento: [
             'Estructura semántica de páginas web',
             'Formularios accesibles con validaciones básicas',
@@ -40,6 +41,7 @@ export const habilidades = [
         id: 'Javascript',
         icon: javascriptIcon,
         colorIcono: '#F7DF1E',
+        colorSecundario: '#323330',
         conocimiento: [
             'Manipulación del DOM',
             'Manejo de eventos y validación de formularios',
