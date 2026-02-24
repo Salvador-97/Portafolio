@@ -9,7 +9,7 @@ export function Habilidad({ lenguaje }) {
             clsx(
                 "w-full h-full p-4 justify-between items-center flex flex-col rounded-[1rem]",
                 "transition-all duration-300 ease-in",
-                "group border-3 border-[var(--hover-primario)] md:border-transparent bg-white/5",
+                "group border-3 border-[var(--hover-primario)] lg:border-transparent bg-white/5",
                 "hover:border-[var(--hover-primario)]"
             )}
             style={{
@@ -113,9 +113,8 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                 `transition-all duration-500 ease-in-out transform`,
                 'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2rem]',
                 navAbierto
-                    ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible my-[1rem] lg:mt-[2rem]'
+                    ? 'opacity-100 scale-100 overflow-visible my-[1rem] lg:mt-[2rem]'
                     : 'opacity-0 scale-90 max-h-0',
-
             )}>
                 {lista.map(lenguaje => (
                     <Habilidad key={lenguaje.id} lenguaje={lenguaje} />
