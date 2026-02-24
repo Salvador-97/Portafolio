@@ -1,46 +1,52 @@
 import { useState } from "react";
-import { lenguajes, skills } from "../utils/informacionHabilidades";
+import { habilidades } from "../utils/informacionHabilidades";
 import clsx from "clsx";
 
 export function Habilidad({ lenguaje }) {
     const Icono = lenguaje.icon;
-    console.log(Icono)
+    console.log("Nombre: ", lenguaje.id)
+    console.log('Secundario: ', lenguaje.colorSecundario)
     return (
         <div className={
             clsx(
-                "w-full h-full p-4 justify-center items-center flex flex-col rounded-[1rem]",
+                "w-full h-full p-4 justify-between items-center flex flex-col rounded-[1rem]",
                 "transition-all duration-300 ease-in",
-                "group border-3 border-transparent bg-white/5",
-                "hover:bg-transparent hover:border-[var(--color-fondo)]"
+                "group border-3 border-[var(--hover-primario)] md:border-transparent bg-white/5",
+                "hover:border-[var(--hover-primario)]"
             )}
             style={{
-                "--color-fondo": lenguaje.colorIcono,
+                "--hover-primario": lenguaje.colorIcono,
+                "--hover-secundario": lenguaje.colorSecundario,
             }}
         >
-            <div className="rounded-[0.9rem] w-full">
 
-                <div className={clsx(
-                    "justify-between text-center group"
-                )}>
-                    <Icono className="w-12 text-white transition-colors duration-300"
-                        style={{ color: lenguaje.color }} />
-                </div>
-                <div className={
-                    clsx(
-                        "flex items-center py-[0.5rem] justify-center"
-                    )}>
-                    <ul className={
-                        clsx("text-blanco text-left text-[0.75rem] w-[90%]",
-                            "font-[700]"
-                        )}>
-                        {Object.values(lenguaje.conocimiento).map((item, index) => (
-                            <li key={index}><i className="fa-solid fa-caret-right mr-[0.5rem] text-[#5FF0B9]"></i>{item}</li>
-                        ))}
-                    </ul>
-                </div>
+            <div className={clsx(
+                "justify-between text-center"
+            )}>
+                <Icono className={clsx(
+                    "w-[4rem] mx-auto transition-all duration-300",
+                    "[--bg-primaryColor:var(--hover-primario)] [--bg-secondaryColor:var(--hover-secundario)]",
+                    "md:[--bg-primaryColor:#c1bcc6] md:[--bg-secondaryColor:#fff]",
+                    "group-hover:[--bg-primaryColor:var(--hover-primario)]",
+                    "group-hover:[--bg-secondaryColor:var(--hover-secundario)]"
+                )}
+                />
             </div>
-
+            <div className={
+                clsx(
+                    "flex items-center py-[0.5rem] justify-center"
+                )}>
+                <ul className={
+                    clsx("text-blanco text-left text-[0.75rem] w-[90%]",
+                        "font-[700]"
+                    )}>
+                    {Object.values(lenguaje.conocimiento).map((item, index) => (
+                        <li key={index}><i className="fa-solid fa-caret-right mr-[0.5rem] text-[#5FF0B9]"></i>{item}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
+
     );
 }
 
@@ -89,7 +95,7 @@ export function Subseccion({ titulo, lista, lenguaje }) {
     }
     const [navAbierto, abrirNav] = useState(navAbiertoMobile);
     return (
-        <div className="my-auto">
+        <>
             <button className="cursor-pointer w-full" type="button" onClick={() => abrirNav(!navAbierto)}>
                 <h2 className={clsx(
                     "bg-gradienteTitulo  text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]",
@@ -103,29 +109,28 @@ export function Subseccion({ titulo, lista, lenguaje }) {
                 "grid overflow-hidden",
                 "top-full origin-top ",
                 `transition-all duration-500 ease-in-out transform`,
+                'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[2rem]',
                 navAbierto
-                    ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible mt-[4rem] lg:mt-[2rem]'
+                    ? 'opacity-100 scale-100 max-h-[2000px] overflow-visible my-[1rem] lg:mt-[2rem]'
                     : 'opacity-0 scale-90 max-h-0',
-                lenguaje
-                    ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[2rem]'
-                    : 'grid-cols-2 md:grid-cols-5 w-[85%] gap-[1rem] mx-auto mt-[1rem]'
+
             )}>
-                {lista.map(item => (
-                    lenguaje
-                        ? <Habilidad key={item} lenguaje={lenguajes[item]} />
-                        : <Skills key={item} skill={skills[item]} />
+                {lista.map(lenguaje => (
+                    <Habilidad key={lenguaje.id} lenguaje={lenguaje} />
                 ))}
             </div>
-        </div>
+        </>
     );
 }
 
 export default function Habilidades() {
+    const listaFront = habilidades.filter(habilidad => habilidad.categoria === 'Front');
+    const listaBack = habilidades.filter(habilidad => habilidad.categoria === 'Back');
     return (
         <>
             <div className="flex flex-col text-center relative overflow-hidden">
-                <Subseccion titulo="Front-End" lista={listaFront} lenguaje={true} />
-                {/* <Subseccion titulo="Back-End" lista={listaBack} lenguaje={true} /> */}
+                <Subseccion titulo="Front-End" lista={listaFront} />
+                <Subseccion titulo="Back-End" lista={listaBack} />
                 {/* <Subseccion titulo="Soft Skills" lista={listaSkills} lenguaje={false} /> */}
             </div>
         </>
