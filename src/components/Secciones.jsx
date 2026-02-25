@@ -23,7 +23,7 @@ export default function Secciones() {
         <>
             <section className={clsx(
                 "w-[85%] lg:min-h-dvh flex flex-col-reverse md:grid md:grid-cols-[2fr_1fr] md:gap-[7rem] items-center mx-auto",
-                "mb-[2rem] pt-[1rem] snap-start min-h-screen"
+                "mb-[2rem] pt-[1rem]"
             )} id='acerca'>
                 <AcercaMi />
             </section>
@@ -31,11 +31,11 @@ export default function Secciones() {
                 <Seccion Titulo="Formación"/>
                 <Formacion />
             </section> */}
-            <section className='w-[85%] mx-auto snap-start min-h-screen' id='habilidades'>
+            <section className='w-[85%] mx-auto' id='habilidades'>
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
             </section>
-            <section className='w-[85%] mx-auto flex flex-col justify-center snap-start min-h-screen' id='proyectos'>
+            <section className='w-[85%] mx-auto flex flex-col justify-center' id='proyectos'>
                 <Seccion Titulo="Proyectos"/>
                 <Proyectos />
             </section>
