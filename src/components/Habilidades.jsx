@@ -88,33 +88,11 @@ export function Skills({ skill }) {
     );
 }
 
-export function Subseccion({ titulo, lista, lenguaje }) {
-    let navAbiertoMobile;
-    if (window.innerWidth < 1024) {
-        navAbiertoMobile = false;
-    } else {
-        navAbiertoMobile = true;
-    }
-    const [navAbierto, abrirNav] = useState(navAbiertoMobile);
+export function Subseccion({ lista }) {
     return (
         <>
-            <button className="cursor-pointer w-full" type="button" onClick={() => abrirNav(!navAbierto)}>
-                <h2 className={clsx(
-                    "bg-gradienteTitulo  text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]",
-                    "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem] my-[1rem]"
-                )}>
-                    {titulo}
-                    <i className="fa-solid fa-caret-down pl-[0.5rem]"></i>
-                </h2>
-            </button>
             <div className={clsx(
-                "grid overflow-hidden",
-                "top-full origin-top ",
-                `transition-all duration-500 ease-in-out transform`,
-                'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2rem]',
-                navAbierto
-                    ? 'opacity-100 scale-100 overflow-visible my-[1rem] lg:mt-[2rem]'
-                    : 'opacity-0 scale-90 max-h-0',
+                "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2rem]"
             )}>
                 {lista.map(lenguaje => (
                     <Habilidad key={lenguaje.id} lenguaje={lenguaje} />
@@ -124,15 +102,40 @@ export function Subseccion({ titulo, lista, lenguaje }) {
     );
 }
 
+export function Tab({ Titulo, cambiarTab }) {
+    return (
+        <button className={clsx(
+            "text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]",
+            "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem]",
+            "cursor-pointer"
+        )}
+            type="button"
+            onClick={() => cambiarTab(Titulo)}>
+            {Titulo}
+        </button>
+    )
+}
+
 export default function Habilidades() {
+    const [seccion, cambiarTab] = useState('Frontend')
     const listaFront = habilidades.filter(habilidad => habilidad.categoria === 'Front');
     const listaBack = habilidades.filter(habilidad => habilidad.categoria === 'Back');
     return (
         <>
-            <div className="flex flex-col text-center relative overflow-hidden">
-                <Subseccion titulo="Front-End" lista={listaFront} />
-                <Subseccion titulo="Back-End" lista={listaBack} />
-                {/* <Subseccion titulo="Soft Skills" lista={listaSkills} lenguaje={false} /> */}
+            <div className="flex flex-col text-center">
+                <div>
+                    <Tab Titulo={'Frontend'} cambiarTab={cambiarTab} />
+                    <Tab Titulo={'Backend'} cambiarTab={cambiarTab} />
+                </div>
+                <div key={seccion}
+                    className="transition-all duration-300 ease-in-out animate-fade">
+                    {
+                        seccion === 'Frontend'
+                            ? <Subseccion lista={listaFront} />
+                            : <Subseccion lista={listaBack} />
+                    }
+                </div>
+
             </div>
         </>
     );
