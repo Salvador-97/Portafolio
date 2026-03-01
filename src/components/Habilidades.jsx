@@ -105,9 +105,9 @@ export function Subseccion({ lista }) {
 export function Tab({ Titulo, cambiarTab }) {
     return (
         <button className={clsx(
-            "text-blanco mx-auto py-[0.5rem] rounded-[0.5rem]",
-            "w-[55%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-[700] text-[1.2rem]",
-            "cursor-pointer"
+            "text-blanco border-b-2 border-transparent mx-auto",
+            "font-[700] text-[1.2rem] transition-colors ease-in 300ms",
+            "cursor-pointer hover:border-morado"
         )}
             type="button"
             onClick={() => cambiarTab(Titulo)}>
@@ -123,9 +123,9 @@ export default function Habilidades() {
     return (
         <>
             <div className="flex flex-col text-center">
-                <div>
-                    <Tab Titulo={'Frontend'} cambiarTab={cambiarTab} />
-                    <Tab Titulo={'Backend'} cambiarTab={cambiarTab} />
+                <div className="flex mb-[1rem] w-[20rem] mx-auto">
+                    <Tab Titulo={'Frontend'} cambiarTab={cambiarTab} seccion={seccion} />
+                    <Tab Titulo={'Backend'} cambiarTab={cambiarTab} seccion={seccion} />
                 </div>
                 <div key={seccion}
                     className="transition-all duration-300 ease-in-out animate-fade">
@@ -135,7 +135,6 @@ export default function Habilidades() {
                             : <Subseccion lista={listaBack} />
                     }
                 </div>
-
             </div>
         </>
     );
