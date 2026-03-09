@@ -52,7 +52,7 @@ body {
   /* background: linear-gradient(to right, #222945 0%, #0E101C 100%); */
   background-color: hsla(266, 57%, 5%, 1);
   background-image:
-    radial-gradient(at 0% 100%, hsla(265, 61%, 11%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsl(265, 61%, 11%) 0px, transparent 50%),
     radial-gradient(at 80% 100%, hsla(265, 66%, 19%, 1) 0px, transparent 50%),
     radial-gradient(at 0% 0%, hsla(264, 58%, 27%, 1) 0px, transparent 50%);
 }

@@ -29,11 +29,11 @@ export default function Secciones() {
                 <Seccion Titulo="Formación"/>
                 <Formacion />
             </section> */}
-            <section className='w-[85%] mx-auto' id='habilidades'>
+            <section className='w-[85%] mx-auto lg:h-[100dvh]' id='habilidades'>
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
             </section>
-            <section className='w-[85%] mx-auto flex flex-col justify-center' id='proyectos'>
+            <section className='w-[85%] lg:h-[100dvh] mx-auto flex flex-col justify-center' id='proyectos'>
                 <Seccion Titulo="Proyectos"/>
                 <Proyectos />
             </section>

@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar.jsx";
 import Secciones from './components/Secciones.jsx';
+import Footer from "./components/Footer.jsx";
+import clsx from "clsx";
 
 function App() {
   return (
@@ -8,8 +10,10 @@ function App() {
       <main className="flex-grow flex-col">
         <Secciones />
       </main>
-      <footer className="text-blanco text-center font-[600] mt-[1rem]">
-        <i className="fa-solid fa-copyright pr-[0.5rem]"></i>Salvador Gutiérrez Olvera
+      <footer className={clsx(
+        " text-blanco bg-[#0f0b17] font-[600] mt-[1rem] flex flex-col justify-between"
+      )}>
+        <Footer />
       </footer>
     </div>
   );

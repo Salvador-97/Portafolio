@@ -89,7 +89,7 @@ export function Tarjeta({ informacion }) {
                         </a>
                     </div>
                 </div>
-                <a href="#" className="absolute inset-0"></a>
+                <a className="absolute inset-0"></a>
             </div>
         </div>
     );

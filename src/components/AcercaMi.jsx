@@ -4,55 +4,55 @@ import 'swiper/css';
 import 'swiper/css/pagination'
 import '../index.css'
 
-import { aboutMe, saludo, informacion } from '../utils/informacionContacto';
+import { aboutMe, saludo } from '../utils/informacionContacto';
 import clsx from 'clsx';
 
-export function Enlace({ info }) {
-    const Icon = informacion[info].icono;
-    return (
-        <>
-            <a href={informacion[info].link} target='_blank'
-                className='text-[2.5rem]'>
-                <Icon className="w-4 h-4" strokeWidth={1.5} />
-            </a>
-        </>
-    );
-}
+// export function Enlace({ info }) {
+//     const Icon = informacion[info].icono;
+//     return (
+//         <>
+//             <a href={informacion[info].link} target='_blank'
+//                 className='text-[2.5rem]'>
+//                 <Icon className="w-4 h-4" strokeWidth={1.5} />
+//             </a>
+//         </>
+//     );
+// }
 
-export function Dato({ info }) {
-    const Icon = informacion[info].icono;
-    const notify = () => toast.success('¡Copiado!', {
-        duration: 2000,
-        position: "bottom-center"
-    });
-    return (
-        <>
-            <div className=''
-                onClick={() => {
-                    const textoACopiar = informacion[info].valor;
-                    navigator.clipboard.writeText(textoACopiar);
-                    notify();
-                }}>
-                <Icon className="w-4 h-4" />
-                <Toaster />
-            </div>
-        </>
-    );
-}
+// export function Dato({ info }) {
+//     const Icon = informacion[info].icono;
+//     const notify = () => toast.success('¡Copiado!', {
+//         duration: 2000,
+//         position: "bottom-center"
+//     });
+//     return (
+//         <>
+//             <div className=''
+//                 onClick={() => {
+//                     const textoACopiar = informacion[info].valor;
+//                     navigator.clipboard.writeText(textoACopiar);
+//                     notify();
+//                 }}>
+//                 <Icon className="w-4 h-4" />
+//                 <Toaster />
+//             </div>
+//         </>
+//     );
+// }
 
-export function Contacto({ lista }) {
-    return (
-        <ul className={clsx(
-            "flex flex-row text-center text-[1rem] my-[1rem] py-[0.5rem]",
-        )}>
-            {lista.map((info, index) => (
-                <li key={index} className='p-[0.6rem] mx-[0.2rem] border rounded-[2rem] text-blanco'>
-                    {informacion[info].enlace ? <Enlace info={info} /> : <Dato info={info} />}
-                </li>
-            ))}
-        </ul>
-    );
-}
+// export function Contacto({ lista }) {
+//     return (
+//         <ul className={clsx(
+//             "flex flex-row text-center text-[1rem] my-[1rem] py-[0.5rem]",
+//         )}>
+//             {lista.map((info, index) => (
+//                 <li key={index} className='p-[0.6rem] mx-[0.2rem] border rounded-[2rem] text-blanco'>
+//                     {informacion[info].enlace ? <Enlace info={info} /> : <Dato info={info} />}
+//                 </li>
+//             ))}
+//         </ul>
+//     );
+// }
 
 export default function AcercaMi() {
     return (

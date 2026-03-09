@@ -1,4 +1,6 @@
-import { ArrowDownToLine, Github, Linkedin, Mail, MapPin, Phone, } from "lucide-react";
+import { ArrowDownToLine, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import toast from "react-hot-toast";
+
 
 export const aboutMe = (
     <>
@@ -14,56 +16,41 @@ export const saludo = (
     </>
 )
 
-export const listaInformacion = ['telefono', 'correo', 'direccion'];
-export const listaLinks = ['github', 'linkedin', 'cv']
+const notify = () => toast.success('¡Copiado!', {
+        duration: 2000,
+        position: "bottom-center"
+    });
 
-export const informacion = {
-    nombre: {
-        valor: 'Salvador Gutiérrez Olvera',
-        icono: 'fa-solid fa-user',
-        color: '#fff',
-        enlace: false
-
-    },
-    telefono: {
+export const contacto = [
+    {
+        id: 'telefono',
         valor: '5582214610',
         icono: Phone,
-        color: '#3C88DE',
-        enlace: false
-
+        color: '#3C88DE'
     },
-    correo: {
+    {
+        id: 'correo',
         valor: 'salvador.go_97@hotmail.com',
         icono: Mail,
-        color: '#DE9E3C',
-        enlace: false
+        color: '#DE9E3C'
     },
-    direccion: {
-        valor: 'Teoloyucan, Edo. de Méx.',
+    {
+        id: 'ubicacion',
+        valor: 'Teoloyucan, MX',
         icono: MapPin,
-        color: '#DE3C3C',
-        enlace: false
+        color: '#DE3C3C'
     },
-    github: {
-        valor: 'Salvador_97',
-        icono: Github,
-        color: '#fff',
-        link: 'https://github.com/Salvador-97',
-        enlace: true
-    },
-    linkedin: {
-        valor: 'salvadorgo97',
+    {
+        id: 'linkedin',
         icono: Linkedin,
         color: '#2787F5',
-        link: 'https://www.linkedin.com/in/salvadorgo97/',
-        enlace: true
+        link: 'https://www.linkedin.com/in/salvadorgo97/'
+    },
+    {
+        id: 'github',
+        icono: Github,
+        color: '#fff',
+        link: 'https://github.com/Salvador-97'
     }
-    ,
-    cv: {
-        valor: 'CV',
-        icono: ArrowDownToLine,
-        color: '#2ECF29',
-        link: '/CV.pdf',
-        enlace: true
-    }
-}
+
+]
