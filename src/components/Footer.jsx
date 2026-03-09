@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { contacto } from "../utils/informacionContacto"
 
 export function Item({ informacion }) {
@@ -15,7 +16,10 @@ export function SeccionFooter({ titulo, datos }) {
     return (
         <div className="mb-[1rem]">
             <h3 className="mb-[1rem] text-[1.4rem]">{titulo}</h3>
-            <ul className="flex gap-[1rem] justify-center items-center md:items-start flex-col">
+            <ul className={clsx(
+                "flex gap-[1rem] justify-center md:justify-start items-center md:items-start",
+                `${(titulo == "Redes") ? "flex-row" : "flex-col"}`
+            )}>
                 {datos.map(info => (
                     <li className="text-[var(--colorIcono)] flex"
                             style={{
