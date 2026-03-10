@@ -45,6 +45,10 @@
   --swiper-pagination-bullet-inactive-color: #cccccc;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* background-image: url('/Nuevo_Fondo.png');
   background-size: cover;
@@ -98,4 +102,23 @@ body {
 
 .animate-fade {
   animation: fade 0.6s ease-in-out;
+}
+
+.barraSelector {
+  position: relative;
+}
+
+.barraSelector::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #fcbccb;
+  transition: width 0.3s ease;
+}
+
+.barraSelector:hover::before {
+  width: 100%;
 }

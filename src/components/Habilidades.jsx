@@ -59,11 +59,6 @@ export function Skills({ skill }) {
             "rounded-[0.5rem] flex flex-col bg-azulfondo justify-center",
             "transition-colors duration-400 ease-in"
         )}
-            /*
-            style={{
-                borderColor: skill.color,
-                backgroundColor: hover ? skill.color : 'transparent',
-    }} */
             onMouseEnter={() => cambiarHover(true)}
             onMouseLeave={() => cambiarHover(false)}
         >
@@ -107,7 +102,7 @@ export function Tab({ Titulo, cambiarTab }) {
         <button className={clsx(
             "text-blanco border-b-2 border-transparent mx-auto",
             "font-[700] text-[1.2rem] transition-colors ease-in 300ms",
-            "cursor-pointer hover:border-morado"
+            "cursor-pointer barraSelector"
         )}
             type="button"
             onClick={() => cambiarTab(Titulo)}>

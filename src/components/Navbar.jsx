@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 export function ItemsNav({ nombre, href }) {
     return (
-        <li className="px-[0.8rem] py-[0.5rem] rounded-[0.6rem] hover:bg-gradienteTitulo transition-all duration-300 ease-in">
+        <li className="rounded-[0.6rem] barraSelector transition-all duration-300 ease-in">
             <a href={href}
                 className='no-underline text-blanco font-[700]'>
                 {nombre}</a>
