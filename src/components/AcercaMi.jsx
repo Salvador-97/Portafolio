@@ -66,9 +66,9 @@ export default function AcercaMi() {
                 <h2 className='titulo text-rosaPalido font-[800] text-[1.2rem]'>Full-Stack Developer</h2>
                 <p className='text-blanco text-center mt-[0.5rem] max-w-[40ch]'>{aboutMe}</p>
                 <a href='/Portafolio/CV_Dev_Salvador_Gutiérrez_Olvera.pdf' download className={clsx(
-                    'max-w-[60%] mt-4 border-rosaBoton border-2 text-rosaBoton p-2 rounded-[0.5rem]',
+                    'max-w-[60%] mt-4 bg-rosaBoton text-blanco border-rosaBoton border-2 p-2 rounded-[0.5rem]',
                     'flex justify-around transition-colors ease-in 300ms',
-                    'hover:bg-rosaBoton hover:text-blanco',
+                    'lg:bg-transparent lg:text-rosaBoton lg:hover:bg-rosaBoton hover:text-blanco',
                 )}>
                     <ArrowDownToLine />Descargar CV
                 </a>
