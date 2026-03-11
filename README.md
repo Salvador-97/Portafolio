@@ -14,18 +14,17 @@ Sitio donde muestro mis capacidades de desarrollo.
 Mi portafolio se divide en 3 secciones, la primera donde hablo de mi, de ahí mis habilidades dentro de la programación, y por último la aplicación de mis conocimientos.
 
 ### Acerca de mi
-Hablo un poco de mi, y pongo mis estudios, y mi experiencia en el mundo laboral. Así como mi información basica junto con enlaces de interes.
 
 ![Acerca de mi](/public/img_readme/Acerca.PNG)
 
 ### Habilidades
 
-En esta sección lo divido en tres subsecciones en donde separo mi conocimiento en Front-End, Back-End y mis Soft-Skill.
+En esta sección lo divido en tres subsecciones en donde separo mi conocimiento en Front-End, Back-End
 
 ![Habilidades](/public/img_readme/Habilidades.gif)
 
 ### Proyectos
-Muestro mis diferentes proyextos en donde se puede observar cada una de las tecnologias que use. En la parte de la descripción puede hacer un link que haga referencia a la página en línea.
+Muestro mis diferentes proyectos en donde se puede observar cada una de las tecnologias que use. 
 
 ![Proyectos](/public/img_readme/Proyectos.PNG)
 
