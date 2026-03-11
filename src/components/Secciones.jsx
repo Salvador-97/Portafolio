@@ -11,7 +11,7 @@ export function Seccion({ Titulo }) {
             clsx('w-full sm:w-[50%] lg:w-[45%] gradienteTitulo rounded-[0.5rem] mx-auto text-center font-[700] text-[1.2rem]',
                 'lg:text-[1.8rem] py-[0.5rem]'
             )}>
-            <span className='font-titulos'>{Titulo}</span>
+            <span className='font-titulos text-[1.8rem]'>{Titulo}</span>
         </div>
     );
 }
@@ -33,7 +33,7 @@ export default function Secciones() {
                 <Seccion Titulo="Habilidades"/>
                 <Habilidades />
             </section>
-            <section className='w-[85%] lg:h-[100dvh] mx-auto flex flex-col justify-center' id='proyectos'>
+            <section className='w-[85%] lg:h-[100dvh] mt-4 mx-auto flex flex-col justify-center' id='proyectos'>
                 <Seccion Titulo="Proyectos"/>
                 <Proyectos />
             </section>
