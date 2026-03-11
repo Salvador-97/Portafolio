@@ -119,6 +119,10 @@ body {
   transition: width 0.3s ease;
 }
 
+.barraSelector.active::before {
+  width: 100%;
+}
+
 .barraSelector:hover::before {
   width: 100%;
 }

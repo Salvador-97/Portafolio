@@ -97,12 +97,13 @@ export function Subseccion({ lista }) {
     );
 }
 
-export function Tab({ Titulo, cambiarTab }) {
+export function Tab({ Titulo, cambiarTab, seccion }) {
     return (
         <button className={clsx(
             "text-blanco border-b-2 border-transparent mx-auto",
             "font-[700] text-[1.2rem] transition-colors ease-in 300ms",
-            "cursor-pointer barraSelector"
+            "cursor-pointer barraSelector",
+            seccion === Titulo && "active"
         )}
             type="button"
             onClick={() => cambiarTab(Titulo)}>

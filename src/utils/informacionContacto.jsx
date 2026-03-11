@@ -44,12 +44,14 @@ export const contacto = [
         id: 'linkedin',
         icono: Linkedin,
         color: '#2787F5',
+        valor: 'Linkedin',
         link: 'https://www.linkedin.com/in/salvadorgo97/'
     },
     {
         id: 'github',
         icono: Github,
         color: '#fff',
+        valor: 'Github',
         link: 'https://github.com/Salvador-97'
     }
 
